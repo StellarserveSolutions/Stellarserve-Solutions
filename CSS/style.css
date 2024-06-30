@@ -6,13 +6,14 @@
     --primary-button-color-green-hover: #286A4E;
     --primary-button-color-white-outline: #FFFFFF;
     --primary-button-color-white-outline-hover: #EEEEEE;
-    --card-color-box-shadow: 0 0 30px #476576;
+    --card-color-box-shadow: 0 0 16px #476576;
     --box-shadow-color-white-bg: 0 2px 5px 1px rgba(64, 60, 67, .16);
     --primary-text-color-white-hover: #42B082;
     --primary-text-color-white: #fff;
-    --big-font: 2.5rem;
-    --normal-font: 2rem;
-    --h2-font: 3rem;
+    --primary-text-color-dark: #334E5E;
+    --big-font: 2.2rem;
+    --h2-font: 2rem;
+    --normal-font: 1rem;
 
 }
 
@@ -30,6 +31,8 @@ body {
     background-color: var(--primary-bg-color-white);
     color: var(--primary-text-color-white);
 }
+
+/*------- Style for Header section ----------------------------------- */
 
 header {
     display: flex;
@@ -58,7 +61,7 @@ header .navlist a:hover {
     color: var(--primary-text-color-white-hover);
 }
 
-header .nav-button a {
+.btn a  {
     display: inline-flex;
     align-items: center;
     padding: 10px 20px;
@@ -66,9 +69,15 @@ header .nav-button a {
     color: var(--primary-text-color-white);
     border-radius: 8px;
     text-align: center;
+    box-shadow: var(--card-color-box-shadow);
 }
 
-header .nav-button i.bx {
+.btn a:hover {
+    background-color: var(--primary-button-color-green-hover);
+    transition: 0.4s ease;
+}
+
+.btn i.bx {
     padding-left: 16px;
 }
 
@@ -83,3 +92,43 @@ header #menu-icon {
     padding: 3px;
     display: none;
 }
+
+/*------- Style for Home section ----------------------------------- */
+
+section {
+    padding: 100px 10%;
+}
+
+.home {
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 4.5rem;
+}
+
+.home-content {
+    max-width: 600px;
+    color: #334E5E;
+}
+
+.home-image img {
+    width: 85%;
+}
+
+.home-content h1 {
+    font-size: var(--big-font);
+    font-weight: 700;
+}
+
+.home-content p, .home-content .btn {
+    font-size: var(--normal-font);
+    padding-top: 10px;
+}
+
+.home-content .btn {
+    padding-top: 20px;
+}
+
+/*------- Style for services section ----------------------------------- */
