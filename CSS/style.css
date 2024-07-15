@@ -6,14 +6,14 @@
     --primary-button-color-green-hover: #286A4E;
     --primary-button-color-white-outline: #FFFFFF;
     --primary-button-color-white-outline-hover: #EEEEEE;
-    --card-color-box-shadow: 0 0 16px #476576;
+    --card-color-box-shadow: 0 0 16px #262f34;
     --box-shadow-color-white-bg: 0 2px 5px 1px rgba(64, 60, 67, .16);
     --primary-text-color-white-hover: #42B082;
     --primary-text-color-white: #fff;
     --primary-text-color-dark: #334E5E;
-    --big-font: 2.2rem;
+    --big-font: 4rem;
     --h2-font: 2rem;
-    --normal-font: 1rem;
+    --normal-font: 1.2rem;
 
 }
 
@@ -44,7 +44,16 @@ header {
 }
 
 header .logo img {
-    width: 80%;
+    width: 30px;
+    height: 30px;
+}
+
+header .logo span {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-text-color-white);
+    padding-left: 10px;
+
 }
 
 header .navlist {
@@ -61,7 +70,7 @@ header .navlist a:hover {
     color: var(--primary-text-color-white-hover);
 }
 
-.btn a  {
+.btn a {
     display: inline-flex;
     align-items: center;
     padding: 10px 20px;
@@ -69,7 +78,6 @@ header .navlist a:hover {
     color: var(--primary-text-color-white);
     border-radius: 8px;
     text-align: center;
-    box-shadow: var(--card-color-box-shadow);
 }
 
 .btn a:hover {
@@ -100,21 +108,45 @@ section {
 }
 
 .home {
-    min-height: 100vh;
+    padding-top: 10%;
+    min-height: 90vh;
     height: 100%;
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 4.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.home-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
 }
 
 .home-content {
-    max-width: 600px;
-    color: #334E5E;
-}
-
-.home-image img {
-    width: 85%;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: var(--primary-bg-color-white);
 }
 
 .home-content h1 {
@@ -122,13 +154,26 @@ section {
     font-weight: 700;
 }
 
-.home-content p, .home-content .btn {
+.home-content p {
     font-size: var(--normal-font);
     padding-top: 10px;
 }
 
-.home-content .btn {
+.home-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-top: 20px;
 }
+
+.home-btn-container .btn {
+    margin: 0 10px;
+}
+
+.home-btn-container .btn2 a {
+    background: none;
+    border: 1px solid var(--primary-button-color-green);
+}
+
 
 /*------- Style for services section ----------------------------------- */
