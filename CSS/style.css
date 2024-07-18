@@ -45,6 +45,10 @@ p {
     font-size: var(--normal-font);
 }
 
+section {
+    padding: 100px 10%;
+}
+
 /*------- Style for Header section ----------------------------------- */
 
 header {
@@ -70,20 +74,67 @@ header .logo span {
     font-weight: 700;
     color: var(--primary-text-color-white);
     padding-left: 10px;
-
 }
 
-header .navlist {
+header .top-nav {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-header .navlist a {
+.top-nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header .top-nav a {
     color: var(--primary-text-color-white);
     font-weight: 500;
     padding: 10px 20px;
 }
 
-header .navlist a:hover {
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    background-color: var(--secondary-bg-color-variant);
+    z-index: 100001;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s all ease;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+
+}
+
+.menu-close {
+    position: fixed;
+    top: 20px;
+    right: 25%;
+    font-size: 1.5rem;
+    color: var(--primary-text-color-white);
+    cursor: pointer;
+}
+
+.sidebar li {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.sidebar a {
+    color: var(--primary-text-color-white);
+    font-weight: 500;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+header .top-nav a:hover,
+.sidebar a:hover {
     color: var(--primary-text-color-white-hover);
 }
 
@@ -107,7 +158,7 @@ header .navlist a:hover {
 }
 
 header #menu-icon {
-    font-size: 1.5rem;
+    font-size: 26px;
     z-index: 10001;
     cursor: pointer;
     margin-left: 25px;
@@ -192,7 +243,8 @@ section.about {
     background-color: var(--secondary-bg-color-variant);
 }
 
-.about-content, .featured-services {
+.about-content,
+.featured-services {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -200,30 +252,36 @@ section.about {
     margin-top: 40px;
 }
 
-.about-desc, .featured-services-desc {
+.about-desc,
+.featured-services-desc {
     width: 50%;
     padding-right: 20px;
 }
 
-.about-desc h2, featured-services-desc h2 {
+.about-desc h2,
+featured-services-desc h2 {
     font-size: var(--h2-font);
 }
 
-.about-desc h2, .about-desc p {
+.about-desc h2,
+.about-desc p {
     color: var(--primary-text-color-white);
 }
 
-.about-desc p, .featured-services-desc p {
+.about-desc p,
+.featured-services-desc p {
     font-size: var(--normal-font);
     padding-top: 10px;
     line-height: 1.6;
-} 
+}
 
-.about-image-container, .featured-services-img {
+.about-image-container,
+.featured-services-img {
     width: 50%;
 }
 
-.about-image-container img, .featured-services-img img {
+.about-image-container img,
+.featured-services-img img {
     width: 90%;
     height: 100%;
     object-fit: cover;
@@ -237,7 +295,7 @@ section.services {
     padding: 100px 10%;
 }
 
-.services-heading h2, 
+.services-heading h2,
 .services-heading p {
     color: var(--primary-text-color-dark);
     text-align: center;
@@ -305,9 +363,11 @@ section.testimonial {
     background-color: #5c717e;
 }
 
-.testimonial-heading p, .testimonial-heading h2  {
+.testimonial-heading p,
+.testimonial-heading h2 {
     text-align: center;
 }
+
 .testimonial-heading p {
     padding-top: 10px;
 }
@@ -341,7 +401,7 @@ section.testimonial {
     object-fit: cover;
     border-radius: 50%;
     margin: 0 20px 0 0;
-    
+
 }
 
 .customer-profile {
@@ -361,7 +421,8 @@ section.testimonial {
     background-color: var(--secondary-bg-color-darkblue);
 }
 
-.contact-heading h2, .contact-heading p {
+.contact-heading h2,
+.contact-heading p {
     color: var(--primary-text-color-white);
     text-align: center;
 }
@@ -497,4 +558,226 @@ footer .copyright .vertical-line {
 
 .footer-logo span a {
     color: var(--primary-text-color-white);
+}
+
+/* Responsive */
+@media screen and (max-width: 580px) {
+    nav .hideOnMobile {
+        display: none;
+    }
+
+    header #menu-icon {
+        display: block;
+    }
+
+    header .logo span {
+        font-size: 1rem;
+    }
+
+    header .logo img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .home-content h1 {
+        font-size: 2rem;
+    }
+
+    .home-content p {
+        font-size: 1rem;
+    }
+
+    .home-btn-container .btn a {
+        padding: 8px 10px;
+        font-size: 0.6rem;
+    }
+
+    section.about,
+    .services,
+    .featured-services,
+    .testimonial,
+    .contact {
+        padding: 50px 10%;
+    }
+
+    .about-content,
+    .featured-services,
+    .services-card-container,
+    .testimonial-card-container {
+        flex-direction: column;
+    }
+
+    .about-desc,
+    .featured-services-desc,
+    .about-image-container,
+    .featured-services-img,
+    .services-card,
+    .testimonial-card {
+        width: 100%;
+    }
+
+    .about-desc h2,
+    .featured-services-desc h2,
+    .services-heading h2,
+    .testimonial-heading h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-desc p,
+    .featured-services-desc p,
+    .services-heading p,
+    .testimonial-heading p,
+    .testimonial-card p {
+        font-size: 0.8rem;
+    }
+
+    .about-image-container img,
+    .featured-services-img img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .services-card,
+    .testimonial-card {
+        margin: 10px 0;
+    }
+
+    .services-card h3,
+    .testimonial-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    footer h2 {
+        font-size: 1.5rem;
+    }
+
+    footer .copyright p,
+    footer .copyright span {
+        font-size: 0.8rem;
+    }
+
+    footer .social-icons i {
+        font-size: 1rem;
+    }
+
+    footer .social-icons a {
+        padding: 0 5px;
+    }
+}
+
+@media (min-width: 581px) and (max-width: 1250px) {
+    nav .hideOnMobile {
+        display: none;
+    }
+
+    header #menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    header .top-nav ul {
+        flex-direction: column;
+    }
+
+    header .top-nav a {
+        padding: 20px 0;
+    }
+
+    header .logo span {
+        font-size: 1.5rem;
+    }
+
+    header .logo img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .home-content h1 {
+        font-size: 3rem;
+    }
+
+    .home-content p {
+        font-size: 1.2rem;
+    }
+
+    .home-btn-container .btn a {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .about-content,
+    .featured-services,
+    .services-card-container,
+    .testimonial-card-container {
+        flex-direction: column;
+    }
+
+    .about-desc,
+    .featured-services-desc,
+    .about-image-container,
+    .featured-services-img,
+    .services-card,
+    .testimonial-card {
+        width: 100%;
+    }
+
+    .about-desc h2,
+    .featured-services-desc h2,
+    .services-heading h2,
+    .testimonial-heading h2 {
+        font-size: 2rem;
+    }
+
+    .about-desc p,
+    .featured-services-desc p,
+    .services-heading p,
+    .testimonial-heading p,
+    .testimonial-card p {
+        font-size: 1.2rem;
+    }
+
+    .about-image-container img,
+    .featured-services-img img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .services-card,
+    .testimonial-card {
+        margin: 10px 0;
+    }
+
+    .services-card h3,
+    .testimonial-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    footer h2 {
+        font-size: 2rem;
+    }
+
+    footer .social-icons i {
+        font-size: 1.5rem;
+    }
+
+    footer .social-icons a {
+        padding: 0 10px;
+    }
+
+    footer .copyright p,
+    footer .copyright span {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 801px) and (max-width: 1439px) {
+
 }
