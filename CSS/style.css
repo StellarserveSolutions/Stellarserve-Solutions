@@ -176,9 +176,7 @@ section {
 }
 
 .home {
-    padding-top: 10%;
-    min-height: 90vh;
-    height: 100%;
+    min-height: 80vh;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -205,13 +203,11 @@ section {
 }
 
 .home-content {
-    width: 80%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
     z-index: 1;
     text-align: center;
     color: var(--primary-bg-color-white);
