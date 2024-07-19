@@ -559,7 +559,7 @@ footer .copyright .vertical-line {
 #thank-you-message {
     display: none;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1rem;
     color: #79F2B9;
     animation: fade-in 1s;
 }
