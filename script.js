@@ -38,13 +38,13 @@ document.addEventListener('DOMContentLoaded', function() {
             if (response.ok) {
                 form.style.display = 'none'; // Hide the form
                 thankYouMessage.style.display = 'block'; // Show the thank you message
-                
+
                 setTimeout(() => {
                   thankYouMessage.style.display = 'none'; // Hide the thank you message
                   form.reset(); // Reset the form fields
                   form.style.display = 'block'; // Show the form again with animation
                   form.classList.add('fade-in');
-              }, 3000);
+              }, 4000);
 
             } else {
                 response.json().then(data => {
