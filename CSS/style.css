@@ -556,6 +556,41 @@ footer .copyright .vertical-line {
     color: var(--primary-text-color-white);
 }
 
+#thank-you-message {
+    display: none;
+    text-align: center;
+    font-size: 1.2em;
+    color: #79F2B9;
+    animation: fade-in 1s;
+}
+
+.form-submit {
+    background-color: #79F2B9;
+    color: #002236;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-submit:hover {
+    background-color: #66d9a6;
+}
+
+.fade-in {
+    animation: fade-in 1s;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
 /* Responsive */
 @media screen and (max-width: 580px) {
     nav .hideOnMobile {
@@ -584,8 +619,8 @@ footer .copyright .vertical-line {
     }
 
     .home-btn-container .btn a {
-        padding: 8px 10px;
-        font-size: 0.6rem;
+        padding: 10px 12px;
+        font-size: 0.8rem;
     }
 
     section.about,
