@@ -141,7 +141,7 @@ header .top-nav a:hover,
 .btn a {
     display: inline-flex;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 36px;
     background-color: var(--primary-button-color-green);
     color: var(--primary-text-color-white);
     border-radius: 8px;
@@ -151,10 +151,6 @@ header .top-nav a:hover,
 .btn a:hover {
     background-color: var(--primary-button-color-green-hover);
     transition: 0.4s ease;
-}
-
-.btn i.bx {
-    padding-left: 16px;
 }
 
 header #menu-icon {
