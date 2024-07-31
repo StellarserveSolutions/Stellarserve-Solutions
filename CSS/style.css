@@ -88,7 +88,7 @@ header .top-nav {
     align-items: center;
 }
 
-header .top-nav a {
+header .top-nav li a {
     color: var(--primary-text-color-white);
     font-weight: 500;
     padding: 10px 20px;
@@ -126,7 +126,7 @@ header .top-nav a {
     text-align: center;
 }
 
-.sidebar a {
+.sidebar li a {
     color: var(--primary-text-color-white);
     font-weight: 500;
     padding: 10px 20px;
@@ -141,11 +141,20 @@ header .top-nav a:hover,
 .btn a {
     display: inline-flex;
     align-items: center;
-    padding: 10px 36px;
+    padding: 8px 20px;
     background-color: var(--primary-button-color-green);
     color: var(--primary-text-color-white);
     border-radius: 8px;
     text-align: center;
+    font-size: 0.9rem;
+}
+
+header .sidebar .get-started {
+    margin-bottom: 10px;
+}
+
+header .top-nav .get-started {
+    margin-left: 10px;
 }
 
 .btn a:hover {
@@ -224,7 +233,7 @@ section {
     margin: 0 10px;
 }
 
-.home-btn-container .btn2 a {
+.home-btn-container .btn2 a, .find-talent a {
     background: none;
     border: 1px solid var(--primary-button-color-green);
 }
@@ -304,7 +313,7 @@ section.services {
 }
 
 .services-card {
-    width: 30%;
+width: 30%;
     background-color: var(--secondary-bg-color-darkblue);
     margin: 0 20px;
     border-radius: 10px;
@@ -407,27 +416,95 @@ section.testimonial {
 }
 
 
-/* contact  */
-.contact {
+/* FAQs  */
+.faq {
     padding: 100px 10%;
     background-color: var(--secondary-bg-color-darkblue);
 }
 
-.contact-heading h2,
-.contact-heading p {
+.faq-heading h2,
+.faq-heading p {
     color: var(--primary-text-color-white);
     text-align: center;
 }
 
-.contact-heading {
+.faq-heading {
     padding-bottom: 50px;
 }
 
-.contact-heading p {
+.faq-heading p {
     padding-top: 10px;
 }
 
-.form {
+.accordion {
+    margin: 10px auto;
+    border-radius: 5px;
+    max-width: 800px;
+}
+
+.accordion-item {
+    border-top: 1px solid #ddd;
+
+}
+.accordion-item:first-child {
+    border-top: none;
+}
+
+.accordion-item:last-child {
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion-input {
+    display: none;
+}
+
+.accordion-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.accordion-input:checked + .accordion-label::after {
+    transform: rotate(-180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    transition: max-height 0.3s ease-out;
+    color: var(--primary-text-color-white);
+    background-color: var(--primary-button-color-green);
+}
+
+.accordion-content a {
+    color: var(--secondary-bg-color-variant);
+}
+
+.accordion-label::after {
+    content: '▼';
+    font-size: 12px;
+    transition: transform 0.3s;
+}
+
+.accordion-input:checked + .accordion-label + .accordion-content {
+    max-height: 100px;
+    padding: 15px;
+}
+
+.accordion-content p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+
+/* .form {
     width: 50%;
     margin: auto;
 }
@@ -492,7 +569,7 @@ section.testimonial {
 
 .form-submit:hover {
     background-color: var(--primary-button-color-green);
-}
+} */
 
 /* footer */
 footer {
@@ -581,6 +658,7 @@ footer .copyright .vertical-line {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -696,7 +774,7 @@ footer .copyright .vertical-line {
     }
 }
 
-@media (min-width: 581px) and (max-width: 1250px) {
+@media (min-width: 581px) and (max-width: 999px) {
     nav .hideOnMobile {
         display: none;
     }
@@ -805,6 +883,26 @@ footer .copyright .vertical-line {
     }
 }
 
-@media (min-width: 801px) and (max-width: 1439px) {
+@media (min-width: 1000px) and (max-width: 1299px) {
+    .top-nav ul.hideOnMobile {
+        display: none;
+    }
+
+    .sidebar .get-started {
+        display: none;
+    }
+
+    header #menu-icon {
+        display: block;
+    }
+
+    .services-card-container {
+        flex-wrap: wrap;
+    }
+
+    .services-card {
+        width: 45%;
+        margin-bottom: 4%;
+    }
 
 }
