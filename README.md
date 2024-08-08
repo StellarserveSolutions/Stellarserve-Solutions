@@ -1,10 +1,10 @@
-# StellarServe Solutions
+# Stellarserve Solutions
 
-Welcome to StellarServe Solutions, where we revolutionize the way companies source and hire remote talent. Our comprehensive platform connects employers with a global network of rigorously vetted experts in various tech domains, ensuring top-notch talent acquisition and streamlined hiring processes.
+Welcome to Stellarserve Solutions, where we revolutionize the way companies source and hire remote talent. Our comprehensive platform connects employers with a global network of rigorously vetted experts in various tech domains, ensuring top-notch talent acquisition and streamlined hiring processes.
 
 ## 🌐 About Us
 
-At StellarServe Solutions, we understand the challenges companies face in finding qualified professionals, especially in the fast-evolving tech landscape. Our platform is designed to address these challenges by providing access to a global network of remote experts specializing in:
+At Stellarserve Solutions, we understand the challenges companies face in finding qualified professionals, especially in the fast-evolving tech landscape. Our platform is designed to address these challenges by providing access to a global network of remote experts specializing in:
 
 - Artificial Intelligence (AI)
 - Machine Learning
@@ -28,5 +28,5 @@ For more information or support, feel free to reach out:
 
 - **Website:** [www.stellarservesolutioms.online](https://stellarservesolutions.github.io/Stellarserve-Solutions/)
 - **Email:** [info@stellarservesolutions.online](mailto:info@stellarservesolutions.online)
-- **GitHub:** [StellarServe Solutions](https://github.com/stellarservesolutions/Stellarserve-Solutions/)
+- **GitHub:** [Stellarserve Solutions](https://github.com/stellarservesolutions/Stellarserve-Solutions/)
 
