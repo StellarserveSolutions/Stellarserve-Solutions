@@ -32,6 +32,11 @@ body {
     color: var(--primary-text-color-white);
 }
 
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 h1 {
     font-size: var(--big-font);
     font-weight: 700;
@@ -47,6 +52,7 @@ p {
 
 section {
     padding: 100px 10%;
+    width: 100%;
 }
 
 /*------- Style for Header section ----------------------------------- */
