@@ -27,6 +27,6 @@ We are committed to reducing time-to-hire and ensuring that our clients have acc
 For more information or support, feel free to reach out:
 
 - **Website:** [www.stellarservesolutioms.online](https://stellarservesolutions.github.io/Stellarserve-Solutions/)
-- **Email:** [info@stellarservesolutions.online](mailto:info@stellarservesolutions.online)
+- **Email:** [info@stellarservesolutions.online](mailto:ivanmail.info@gmail.com)
 - **GitHub:** [Stellarserve Solutions](https://github.com/stellarservesolutions/Stellarserve-Solutions/)
 
