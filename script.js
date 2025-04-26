@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Hide the main content initially
   mainContent.style.visibility = "hidden";
 
-  // After 5 seconds, hide the loader and show the main content
+  // After 10 seconds, hide the loader and show the main content
   setTimeout(function () {
     document.body.classList.add("loaded");
     mainContent.style.visibility = "visible";
@@ -78,5 +78,5 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
       loader.remove();
     }, 500); // Remove loader after fade out transition
-  }, 5000);
+  }, 10000); // Changed from 5000 to 10000 milliseconds (10 seconds)
 });
