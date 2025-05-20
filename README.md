@@ -1,1 +1,1 @@
-### Stellarserve Technologies - Official website repository
+### Stellarserve Solutions - Official website repository
