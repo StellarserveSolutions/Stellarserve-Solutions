@@ -1,906 +1,246 @@
-:root {
-  --primary-bg-color-white: #eeeeee;
-  --secondary-bg-color-darkblue: #334e5e;
-  --secondary-bg-color-variant: #1f2f38;
-  --secondary-bg-color-gray: #b7b9a8;
-  --primary-button-color-green: #42b082;
-  --primary-button-color-green-hover: #286a4e;
-  --primary-button-color-white-outline: #ffffff;
-  --primary-button-color-white-outline-hover: #eeeeee;
-  --card-color-box-shadow: 0 0 16px #979797;
-  --box-shadow-color-white-bg: 0 2px 5px 1px rgba(64, 60, 67, 0.16);
-  --primary-text-color-white-hover: #42b082;
-  --primary-text-color-white: #fff;
-  --primary-text-color-dark: #1b1b1b;
-  --big-font: 4rem;
-  --h2-font: 2rem;
-  --normal-font: 1.2rem;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  list-style: none;
-  scroll-behavior: smooth;
-  text-decoration: none;
-}
-
-body {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  background-color: var(--primary-bg-color-white);
-  color: var(--primary-text-color-white);
-}
-
-html,
-body {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-h1 {
-  font-size: var(--big-font);
-  font-weight: 700;
-}
-
-h2 {
-  font-size: var(--h2-font);
-}
-
-p {
-  font-size: var(--normal-font);
-}
-
-section {
-  padding: 100px 10%;
-  width: 100%;
-}
-
-.loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #1f2f38; /* Background color */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10009999;
-}
-
-.spinner {
-  width: 80px;
-  height: 80px;
-  border: 8px solid rgba(255, 255, 255, 0.3);
-  border-top: 8px solid #ffffff; /* White spinner */
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-body.loaded .loader {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-/*------- Style for Header section ----------------------------------- */
-
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 20px 10%;
-  background-color: var(--secondary-bg-color-variant);
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 10001;
-}
-
-.logo {
-  width: 200px;
-  display: flex;
-  align-items: center;
-}
-
-header .logo img {
-  width: 100%;
-}
-
-header .logo span {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--primary-text-color-white);
-  padding-left: 10px;
-}
-
-header .top-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.top-nav ul {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-header .top-nav li a {
-  color: var(--primary-text-color-white);
-  font-weight: 500;
-  padding: 10px 20px;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 250px;
-  background-color: var(--secondary-bg-color-variant);
-  z-index: 100001;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s all ease;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
-}
-
-.menu-close {
-  position: fixed;
-  top: 20px;
-  right: 25%;
-  font-size: 1.5rem;
-  color: var(--primary-text-color-white);
-  cursor: pointer;
-}
-
-.sidebar li {
-  width: 100%;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.sidebar li a {
-  color: var(--primary-text-color-white);
-  font-weight: 500;
-  padding: 10px 20px;
-  width: 100%;
-}
-
-header .top-nav a:hover,
-.sidebar a:hover {
-  color: var(--primary-text-color-white-hover);
-}
-
-.btn a {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 20px;
-  background-color: var(--primary-button-color-green);
-  color: var(--primary-text-color-white);
-  border-radius: 8px;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-header .sidebar .get-started {
-  margin-bottom: 10px;
-}
-
-header .top-nav .get-started {
-  margin-left: 10px;
-}
-
-.btn a:hover {
-  background-color: var(--primary-button-color-green-hover);
-  transition: 0.4s ease;
-}
-
-header #menu-icon {
-  font-size: 26px;
-  z-index: 10001;
-  cursor: pointer;
-  margin-left: 25px;
-  background-color: var(--primary-button-color-green);
-  border-radius: 5px;
-  color: var(--primary-text-color-white);
-  padding: 3px;
-  display: none;
-}
-
-/*------- Style for Home section ----------------------------------- */
-
-/* add a loader animation for 5 seconds before showing the page */
-
-section {
-  padding: 100px 10%;
-}
-
-.home {
-  min-height: 80vh;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-.home-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-.video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 0;
-}
-
-.home-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  z-index: 1;
-  text-align: center;
-  color: var(--primary-bg-color-white);
-}
-
-.home-content p {
-  padding-top: 10px;
-}
-
-.home-btn-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 20px;
-}
-
-.home-btn-container .btn {
-  margin: 0 10px;
-}
-
-.home-btn-container .btn2 a,
-.find-talent a {
-  background: none;
-  border: 1px solid var(--primary-button-color-green);
-}
-
-/*------- Style for about section ----------------------------------- */
-section.about {
-  padding: 100px 10%;
-  background-color: var(--secondary-bg-color-variant);
-}
-
-.about-content,
-.featured-services {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  margin-top: 40px;
-}
-
-.about-desc,
-.featured-services-desc {
-  width: 50%;
-  padding-right: 20px;
-}
-
-.about-desc h2,
-featured-services-desc h2 {
-  font-size: var(--h2-font);
-}
-
-.about-desc h2,
-.about-desc p {
-  color: var(--primary-text-color-white);
-}
-
-.about-desc p,
-.featured-services-desc p {
-  font-size: var(--normal-font);
-  padding-top: 10px;
-  line-height: 1.6;
-}
-
-.about-image-container,
-.featured-services-img {
-  width: 50%;
-}
-
-.about-image-container img,
-.featured-services-img img {
-  width: 90%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: var(--box-shadow-color-white-bg);
-}
-
-/*------- Style for services section ----------------------------------- */
-section.services {
-  padding: 100px 10%;
-}
-
-.services-heading h2,
-.services-heading p {
-  color: var(--primary-text-color-dark);
-  text-align: center;
-}
-
-.services-heading p {
-  padding-top: 10px;
-}
-
-.services-card-container {
-  display: flex;
-  justify-content: center;
-  padding-top: 50px;
-}
-
-.services-card {
-  width: 30%;
-  background-color: var(--secondary-bg-color-darkblue);
-  margin: 0 20px;
-  border-radius: 10px;
-  box-shadow: var(--card-color-box-shadow);
-  transition: 0.4s ease;
-  padding: 30px 20px;
-}
-
-.services-card:hover {
-  transform: translateY(-10px);
-}
-
-.services-card img {
-  width: 60px;
-  height: 60px;
-}
-
-.services-card h3 {
-  color: var(--primary-bg-color-white);
-  padding: 16px 0;
-}
-
-.services-card p {
-  color: var(--primary-bg-color-white);
-  font-size: 1rem;
-}
-
-.horizontal-line {
-  width: 100%;
-  height: 4px;
-  background-color: var(--primary-button-color-green);
-}
-
-.featured-services {
-  background-color: var(--secondary-bg-color-darkblue);
-  padding: 100px 10%;
-}
-
-.fts-2 {
-  background-color: var(--primary-bg-color-white);
-  color: var(--primary-text-color-dark);
-}
-
-/* testimonial */
-section.testimonial {
-  padding: 100px 10%;
-  background-color: #5c717e;
-}
-
-.testimonial-heading p,
-.testimonial-heading h2 {
-  text-align: center;
-}
-
-.testimonial-heading p {
-  padding-top: 10px;
-}
-
-.testimonial-card-container {
-  display: flex;
-  justify-content: center;
-  padding-top: 50px;
-}
-
-.testimonial-card {
-  width: 45%;
-  background-color: var(--secondary-bg-color-darkblue);
-  margin: 0 20px;
-  border-radius: 10px;
-  transition: 0.4s ease;
-  padding: 30px 20px;
-}
-
-.testimonial-card .quote {
-  margin-block: 10px;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-10px);
-}
-
-.testimonial-card img {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin: 0 20px 0 0;
-}
-
-.customer-profile {
-  display: flex;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.customer-profile .customer-id p {
-  font-size: 0.8rem;
-}
-
-/* FAQs  */
-.faq {
-  padding: 100px 10%;
-  background-color: var(--secondary-bg-color-darkblue);
-}
-
-.faq-heading h2,
-.faq-heading p {
-  color: var(--primary-text-color-white);
-  text-align: center;
-}
-
-.faq-heading {
-  padding-bottom: 50px;
-}
-
-.faq-heading p {
-  padding-top: 10px;
-}
-
-.accordion {
-  margin: 10px auto;
-  border-radius: 5px;
-  max-width: 800px;
-}
-
-.accordion-item {
-  border-top: 1px solid #ddd;
-}
-
-.accordion-item:first-child {
-  border-top: none;
-}
-
-.accordion-item:last-child {
-  border-bottom: 1px solid #ddd;
-}
-
-.accordion-input {
-  display: none;
-}
-
-.accordion-label {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  color: #fff;
-  transition: background-color 0.3s;
-}
-
-.accordion-input:checked + .accordion-label::after {
-  transform: rotate(-180deg);
-}
-
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0 15px;
-  transition: max-height 0.3s ease-out;
-  color: var(--primary-text-color-white);
-  background-color: var(--primary-button-color-green);
-}
-
-.accordion-content a {
-  color: var(--secondary-bg-color-variant);
-}
-
-.accordion-label::after {
-  content: "▼";
-  font-size: 12px;
-  transition: transform 0.3s;
-}
-
-.accordion-input:checked + .accordion-label + .accordion-content {
-  max-height: 100px;
-  padding: 15px;
-}
-
-.accordion-content p {
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-/* Footer */
-.footer {
-  background: var(--secondary-bg-color-variant);
-  color: var(--white);
-  padding: 60px 20px 30px;
-  text-align: center;
-}
-
-.footer h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
-}
-
-.social-icons a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  margin: 0 10px;
-  font-size: 1.5rem;
-  color: var(--white);
-  transition: var(--transition);
-}
-
-.social-icons a:hover {
-  background-color: var(--accent);
-  transform: translateY(-5px);
-}
-
-.copyright {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 30px 0 0 0;
-  flex-wrap: wrap;
-}
-
-.copyright p {
-  margin: 10px;
-}
-
-.vertical-line {
-  width: 2px;
-  height: 30px;
-  background-color: rgba(255, 255, 255, 0.3);
-  margin: 0 15px;
-}
-
-.footer-logo {
-  display: flex;
-  align-items: center;
-}
-
-.footer-logo a {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: var(--white);
-}
-
-.footer-logo img {
-  height: 30px;
-  margin-right: 10px;
-}
-
-.partnership {
-  margin-top: 40px;
-}
-
-.partnership p {
-  margin-bottom: 20px;
-  font-size: 1.2rem;
-}
-
-.partner-profile {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-.partner-logo {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 15px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 180px;
-  height: 80px;
-  transition: var(--transition);
-}
-
-.partner-logo:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-5px);
-}
-
-.partner-logo img {
-  max-width: 100%;
-  max-height: 100%;
-  filter: brightness(0) invert(1);
-}
-
-/* Responsive */
-@media screen and (max-width: 580px) {
-  nav .hideOnMobile {
-    display: none;
-  }
-
-  header #menu-icon {
-    display: block;
-  }
-
-  header .logo span {
-    font-size: 1rem;
-  }
-
-  header .logo img {
-    width: 100%; /* Changed from 100 to 100% */
-    height: auto;
-  }
-
-  .home-content h1 {
-    font-size: 2rem;
-  }
-
-  .home-content p {
-    font-size: 1rem;
-  }
-
-  .home-btn-container .btn a {
-    padding: 10px 12px;
-    font-size: 0.8rem;
-  }
-
-  section.about,
-  .services,
-  .featured-services,
-  .testimonial,
-  .contact {
-    padding: 50px 10%;
-  }
-
-  .about-content,
-  .featured-services,
-  .services-card-container,
-  .testimonial-card-container {
-    flex-direction: column;
-  }
-
-  .about-desc,
-  .featured-services-desc,
-  .about-image-container,
-  .featured-services-img,
-  .services-card,
-  .testimonial-card {
-    width: 100%;
-  }
-
-  .about-desc h2,
-  .featured-services-desc h2,
-  .services-heading h2,
-  .testimonial-heading h2 {
-    font-size: 1.5rem;
-  }
-
-  .about-desc p,
-  .featured-services-desc p,
-  .services-heading p,
-  .testimonial-heading p,
-  .testimonial-card p {
-    font-size: 0.8rem;
-  }
-
-  .about-image-container img,
-  .featured-services-img img {
-    width: 100%;
-    height: 100%;
-  }
-
-  .services-card,
-  .testimonial-card {
-    margin: 10px 0;
-  }
-
-  .services-card h3,
-  .testimonial-card h3 {
-    font-size: 1.2rem;
-  }
-
-  .form {
-    width: 100%;
-  }
-
-  footer h2 {
-    font-size: 1.5rem;
-  }
-
-  footer .copyright p,
-  .footer .partnership p,
-  footer.copyright span {
-    font-size: 0.8rem;
-  }
-
-  footer .social-icons i {
-    font-size: 1rem;
-  }
-
-  footer .social-icons a {
-    padding: 0 5px;
-  }
-}
-
-@media (min-width: 581px) and (max-width: 999px) {
-  nav .hideOnMobile {
-    display: none;
-  }
-
-  header #menu-icon {
-    display: block;
-    cursor: pointer;
-  }
-
-  header .top-nav ul {
-    flex-direction: column;
-  }
-
-  header .top-nav a {
-    padding: 20px 0;
-  }
-
-  header .logo span {
-    font-size: 1.5rem;
-  }
-
-  header .logo img {
-    width: 100%;
-    height: 100%;
-  }
-
-  .home-content h1 {
-    font-size: 3rem;
-  }
-
-  .home-content p {
-    font-size: 1.2rem;
-  }
-
-  .home-btn-container .btn a {
-    padding: 10px 20px;
-    font-size: 1rem;
-  }
-
-  .about-content,
-  .featured-services,
-  .services-card-container,
-  .testimonial-card-container {
-    flex-direction: column;
-  }
-
-  .about-desc,
-  .featured-services-desc,
-  .about-image-container,
-  .featured-services-img,
-  .services-card,
-  .testimonial-card {
-    width: 100%;
-  }
-
-  .about-desc h2,
-  .featured-services-desc h2,
-  .services-heading h2,
-  .testimonial-heading h2 {
-    font-size: 2rem;
-  }
-
-  .about-desc p,
-  .featured-services-desc p,
-  .services-heading p,
-  .testimonial-heading p,
-  .testimonial-card p {
-    font-size: 1.2rem;
-  }
-
-  .about-image-container img,
-  .featured-services-img img {
-    width: 100%;
-    height: 100%;
-  }
-
-  .services-card,
-  .testimonial-card {
-    margin: 10px 0;
-  }
-
-  .services-card h3,
-  .testimonial-card h3 {
-    font-size: 1.5rem;
-  }
-
-  .form {
-    width: 100%;
-  }
-
-  footer h2 {
-    font-size: 2rem;
-  }
-
-  footer .social-icons i {
-    font-size: 1.5rem;
-  }
-
-  footer .social-icons a {
-    padding: 0 10px;
-  }
-
-  footer .copyright p,
-  footer .copyright span {
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 1000px) and (max-width: 1299px) {
-  .top-nav ul.hideOnMobile {
-    display: none;
-  }
-
-  .sidebar .get-started {
-    display: none;
-  }
-
-  header #menu-icon {
-    display: block;
-  }
-
-  .services-card-container {
-    flex-wrap: wrap;
-  }
-
-  .services-card {
-    width: 45%;
-    margin-bottom: 4%;
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/android-chrome-512x512.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <title>Stellarserve</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="#"><img src="images/SS_logo_stellarserve-solutions.png"><span>Stellarserve Solutions</span></a>
+        </div>
+        <nav>
+            <div class="sidebar">
+                <div onclick="hideSidebar()" id="menu-icon" class="bx bx-x menu-close"></div>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonial">Testimonials</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+                <div class="btn" class="get-started">
+                    <a href="#contact">Hire Now <i class="bx bx-right-arrow-alt"></i></a>
+                </div>
+            </div>
+            <div class="top-nav">
+                <ul class="hideOnMobile">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonial">Testimonials</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+                <div class="btn get-started hideOnMobile">
+                    <a href="#about">Hire Now <i class="bx bx-right-arrow-alt"></i></a>
+                </div>
+                <div onclick="showSidebar()" id="menu-icon" class="bx bx-menu menu"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home Section--------------------------------------- -->
+    <section id="home" class="home">
+        <video autoplay muted loop id="homeVideo" class="home-video">
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <source src="images/home.mp4" type="video/mp4">
+=======
+            <source src="images/home.mp4" type="video/mp4">
+>>>>>>> 9a2eb699278767bc2c44dc4f0f31b7cd5602f866
+=======
+            <source src="images/home.mp4" type="video/mp4">
+>>>>>>> 9a2eb699278767bc2c44dc4f0f31b7cd5602f866
+=======
+            <source src="images/home.mp4" type="video/mp4">
+>>>>>>> 9a2eb699278767bc2c44dc4f0f31b7cd5602f866
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+        <div class="home-content">
+            <h1>Connect, grow, innovate.</h1>
+            <p>Hire the Best Remote Talent Worldwide with Stellarserve Solutions.</p>
+            <div class="home-btn-container">
+                <div class="btn btn1">
+                    <a href="#services">View our services</a>
+                </div>
+                <div class="btn btn2">
+                    <a href="#contact">Hire Now<i class="bx bx-right-arrow-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="horizontal-line"></div>
+
+    <!-- About section---------------------------------------------- -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <div class="about-desc" data-aos="fade-right">
+                <h2>About Us</h2>
+                <p>Stellarserve Solutions revolutionizes tech hiring for startups & SMEs. We connect you with top-tier
+                    remote talent in AI, ML, software development, cybersecurity, and data science.</p>
+            </div>
+            <div class="about-image-container" data-aos="fade-left">
+                <img src="images/About5.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Section----------------------------------- -->
+    <section id="services" class="services">
+        <div class="services-heading">
+            <h2>Our Services</h2>
+            <p>Find the perfect remote professionals for your business.</p>
+        </div>
+        <div class="services-card-container">
+            <div class="services-card" data-aos="fade-up">
+                <div class="services-card-icon">
+                    <img src="images/Chipping.png" alt="">
+                </div>
+                <h3>AI-Powered Hiring Platform</h3>
+                <p>Efficient, effective, and cost-saving tech recruitment powered by AI.</p>
+            </div>
+            <div class="services-card" data-aos="fade-up">
+                <div class="services-card-icon">
+                    <img src="images/Worldwide Location.png" alt="">
+                </div>
+                <h3>Global Talent Reach</h3>
+                <p>Expand your team globally and achieve your business goals without geographical limitations.</p>
+            </div>
+            <div class="services-card" data-aos="fade-up">
+                <div class="services-card-icon">
+                    <img src="images/Circuit.png" alt="">
+                </div>
+                <h3>Agile Hiring Solutions</h3>
+                <p>Scale your team and drive growth with agile hiring and access to a diverse talent pool.</p>
+            </div>
+            <div class="services-card" data-aos="fade-up">
+                <div class="services-card-icon">
+                    <img src="images/Connected People.png" alt="">
+                </div>
+                <h3>Custom Talent Solutions</h3>
+                <p>Tailored solutions to match your unique hiring needs and build an innovative remote team.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="featured-services fts-1">
+        <div class="featured-services-img" data-aos="fade-right">
+            <img src="images/About3.jpg" alt="">
+        </div>
+        <div class="featured-services-desc" data-aos="fade-left">
+            <h2>Top-tier Remote Talent</h2>
+            <p>Connect with skilled remote professionals in AI, ML, software development, cybersecurity, and data
+                science to elevate your business.</p>
+        </div>
+    </div>
+    <div class="featured-services fts-2" data-aos="fade-right">
+        <div class="featured-services-desc">
+            <h2>Efficient and Effective Hiring</h2>
+            <p>Save time and resources with our AI-powered platform that streamlines the recruitment process and ensures
+                quality hires.</p>
+        </div>
+        <div class="featured-services-img" data-aos="fade-left">
+            <img src="images/About2.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <section id="testimonial" class="testimonial">
+        <div class="testimonial-heading">
+            <h2>Testimonials</h2>
+            <p>See what our customers are saying about our services</p>
+        </div>
+        <div class="testimonial-card-container">
+            <div class="testimonial-card" data-aos="fade-up">
+                <div class="quote">
+                    <img src="images/icons8-get-quote-50.png" alt="">
+                </div>
+                <p>Efficient, effective, and cost-saving tech recruitment powered by AI.</p>
+                <div class="customer-profile">
+                    <img src="images/customer02.jpg" alt="">
+                    <div class="customer-id">
+                        <h4>Patrick L</h4>
+                        <p>Director, Green Ventures</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card" data-aos="fade-up">
+                <div class="quote">
+                    <img src="images/icons8-get-quote-50.png" alt="">
+                </div>
+                <p>Thanks to Stellarserve Solutions, we were able to scale our team and achieve our business goals
+                    without any geographical limitations. Amazing service!.</p>
+                <div class="customer-profile">
+                    <img src="images/customer01.jpg" alt="">
+                    <div class="customer-id">
+                        <h4>Steven M</h4>
+                        <p>Founder, AC Global</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="contact-heading">
+            <h2>Contact Us</h2>
+        </div>
+        <form id="contact-form"  action="https://formspree.io/f/xvgpzpay" method="post" class="form">
+            <div class="form-group">
+                <label for="name" class="form-label">Name<span class="required">*</span></label>
+                <input id="name" class="form-input" type="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email<span class="required">*</span></label>
+                <input id="email" class="form-input" type="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message" class="form-label">Message<span class="required">*</span></label>
+                <textarea id="message" class="form-textarea" name="message" required></textarea>
+            </div>
+            <button class="form-submit" type="submit">Submit</button>
+            <!-- <div class="form-footer">
+                By clicking <b>Submit</b>, you agree to our <a href="" class="terms-link">Terms of Service</a>.
+            </div> -->
+        </form>
+
+        <div id="thank-you-message">
+            <p>Thank you for your message! We will get back to you shortly.</p>
+        </div>
+    </section>
+    <footer class="footer">
+        <h2>Connect with us</h2>
+        <div class="social-icons">
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-linkedin'></i></a>
+        </div>
+        <div class="copyright">
+            <p>&copy; Copyright 2024. All rights reserved.</p>
+            <div class="vertical-line"></div>
+            <div class="footer-logo">
+                <a href=""><img src="images/SS_logo_stellarserve-solutions.png" alt="">
+                    <span>Stellarserve Solutions.</span></a>
+            </div>
+        </div>
+
+    </footer>
+    <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+
+</html>
