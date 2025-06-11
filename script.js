@@ -1,2 +1,273 @@
-:root { --primary-bg-color-white: #eeeeee; --secondary-bg-color-darkblue: #334e5e; --secondary-bg-color-variant: #1f2f38; --secondary-bg-color-gray: #b7b9a8; --primary-button-color-green: #42b082; --primary-button-color-green-hover: #286a4e; --primary-button-color-white-outline: #ffffff; --primary-button-color-white-outline-hover: #eeeeee; --card-color-box-shadow: 0 0 16px #979797; --box-shadow-color-white-bg: 0 2px 5px 1px rgba(64, 60, 67, 0.16); --primary-text-color-white-hover: #42b082; --primary-text-color-white: #fff; --primary-text-color-dark: #1b1b1b; --big-font: 4rem; --h2-font: 2rem; --normal-font: 1.2rem; } * { padding: 0; margin: 0; box-sizing: border-box; list-style: none; scroll-behavior: smooth; text-decoration: none; } body { font-family: "Plus Jakarta Sans", sans-serif; background-color: var(--primary-bg-color-white); color: var(--primary-text-color-white); } html, body { width: 100%; overflow-x: hidden; } h1 { font-size: var(--big-font); font-weight: 700; } h2 { font-size: var(--h2-font); } p { font-size: var(--normal-font); } section { padding: 100px 10%; width: 100%; } .loader { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #1f2f38; /* Background color */ display: none; /* Changed to none to hide by default */ justify-content: center; align-items: center; z-index: 10009999; } .spinner { width: 80px; height: 80px; border: 8px solid rgba(255, 255, 255, 0.3); border-top: 8px solid #ffffff; /* White spinner */ border-radius: 50%; animation: spin 1s linear infinite; } @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } } body.loaded .loader { opacity: 0; visibility: hidden; transition: opacity 0.5s ease, visibility 0.5s ease; } /*------- Style for Header section ----------------------------------- */ header { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 20px 10%; background-color: var(--secondary-bg-color-variant); position: sticky; top: 0; left: 0; z-index: 10001; } .logo { width: 200px; display: flex; align-items: center; } header .logo img { width: 100%; } header .logo span { font-size: 1.3rem; font-weight: 700; color: var(--primary-text-color-white); padding-left: 10px; } header .top-nav { display: flex; justify-content: space-around; align-items: center; } .top-nav ul { display: flex; justify-content: space-around; align-items: center; } header .top-nav li a { color: var(--primary-text-color-white); font-weight: 500; padding: 10px 20px; } .sidebar { position: fixed; top: 0; right: 0; height: 100%; width: 250px; background-color: var(--secondary-bg-color-variant); z-index: 100001; display: none; flex-direction: column; align-items: center; justify-content: center; transition: 0.3s all ease; box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4); } .menu-close { position: fixed; top: 20px; right: 25%; font-size: 1.5rem; color: var(--primary-text-color-white); cursor: pointer; } .sidebar li { width: 100%; padding: 20px 0; text-align: center; } .sidebar li a { color: var(--primary-text-color-white); font-weight: 500; padding: 10px 20px; width: 100%; } header .top-nav a:hover, .sidebar a:hover { color: var(--primary-text-color-white-hover); } .btn a { display: inline-flex; align-items: center; padding: 8px 20px; background-color: var(--primary-button-color-green); color: var(--primary-text-color-white); border-radius: 8px; text-align: center; font-size: 0.9rem; } header .sidebar .get-started { margin-bottom: 10px; } header .top-nav .get-started { margin-left: 10px; } .btn a:hover { background-color: var(--primary-button-color-green-hover); transition: 0.4s ease; } header #menu-icon { font-size: 26px; z-index: 10001; cursor: pointer; margin-left: 25px; background-color: var(--primary-button-color-green); border-radius: 5px; color: var(--primary-text-color-white); padding: 3px; display: none; } /*------- Style for Home section ----------------------------------- */ /* add a loader animation for 5 seconds before showing the page */ section { padding: 100px 10%; } .home { min-height: 80vh; width: 100%; position: relative; overflow: hidden; } .home-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; } .video-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 0; } .home-content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; z-index: 1; text-align: center; color: var(--primary-bg-color-white); } .home-content p { padding-top: 10px; } .home-btn-container { display: flex; justify-content: center; align-items: center; padding-top: 20px; } .home-btn-container .btn { margin: 0 10px; } .home-btn-container .btn2 a, .find-talent a { background: none; border: 1px solid var(--primary-button-color-green); } /*------- Style for about section ----------------------------------- */ section.about { padding: 100px 10%; background-color: var(--secondary-bg-color-variant); } .about-content, .featured-services { display: flex; justify-content: center; align-items: center; gap: 40px; margin-top: 40px; } .about-desc, .featured-services-desc { width: 50%; padding-right: 20px; } .about-desc h2, featured-services-desc h2 { font-size: var(--h2-font); } .about-desc h2, .about-desc p { color: var(--primary-text-color-white); } .about-desc p, .featured-services-desc p { font-size: var(--normal-font); padding-top: 10px; line-height: 1.6; } .about-image-container, .featured-services-img { width: 50%; } .about-image-container img, .featured-services-img img { width: 90%; height: 100%; object-fit: cover; border-radius: 10px; box-shadow: var(--box-shadow-color-white-bg); } /*------- Style for services section ----------------------------------- */ section.services { padding: 100px 10%; } .services-heading h2, .services-heading p { color: var(--primary-text-color-dark); text-align: center; } .services-heading p { padding-top: 10px; } .services-card-container { display: flex; justify-content: center; padding-top: 50px; } .services-card { width: 30%; background-color: var(--secondary-bg-color-darkblue); margin: 0 20px; border-radius: 10px; box-shadow: var(--card-color-box-shadow); transition: 0.4s ease; padding: 30px 20px; } .services-card:hover { transform: translateY(-10px); } .services-card img { width: 60px; height: 60px; } .services-card h3 { color: var(--primary-bg-color-white); padding: 16px 0; } .services-card p { color: var(--primary-bg-color-white); font-size: 1rem; } .horizontal-line { width: 100%; height: 4px; background-color: var(--primary-button-color-green); } .featured-services { background-color: var(--secondary-bg-color-darkblue); padding: 100px 10%; } .fts-2 { background-color: var(--primary-bg-color-white); color: var(--primary-text-color-dark); } /* testimonial */ section.testimonial { padding: 100px 10%; background-color: #5c717e; } .testimonial-heading p, .testimonial-heading h2 { text-align: center; } .testimonial-heading p { padding-top: 10px; } .testimonial-card-container { display: flex; justify-content: center; padding-top: 50px; } .testimonial-card { width: 45%; background-color: var(--secondary-bg-color-darkblue); margin: 0 20px; border-radius: 10px; transition: 0.4s ease; padding: 30px 20px; } .testimonial-card .quote { margin-block: 10px; } .testimonial-card:hover { transform: translateY(-10px); } .testimonial-card img { width: 40px; height: 40px; object-fit: cover; border-radius: 50%; margin: 0 20px 0 0; } .customer-profile { display: flex; align-items: center; margin-top: 20px; } .customer-profile .customer-id p { font-size: 0.8rem; } /* FAQs */ .faq { padding: 100px 10%; background-color: var(--secondary-bg-color-darkblue); } .faq-heading h2, .faq-heading p { color: var(--primary-text-color-white); text-align: center; } .faq-heading { padding-bottom: 50px; } .faq-heading p { padding-top: 10px; } .accordion { margin: 10px auto; border-radius: 5px; max-width: 800px; } .accordion-item { border-top: 1px solid #ccc; } .accordion-item:last-child { border-bottom: 1px solid #ccc; } .accordion-input { display: none; } .accordion-label { display: block; padding: 15px; background-color: #f8f8f8; cursor: pointer; position: relative; } .accordion-label::after { content: "+"; position: absolute; right: 15px; top: 50%; transform: translateY(-50%); } .accordion-input:checked + .accordion-label::after { content: "-"; } .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background-color: #fff; padding: 0 15px; } .accordion-input:checked ~ .accordion-content { max-height: 200px; /* Adjust as needed */ padding: 15px; } /*------- Style for Footer section ----------------------------------- */ .footer { background-color: var(--secondary-bg-color-variant); padding: 50px 10%; text-align: center; } .footer h2 { color: var(--primary-text-color-white); margin-bottom: 20px; } .social-icons a { color: var(--primary-text-color-white); font-size: 24px; margin: 0 10px; } .social-icons a:hover { color: var(--primary-text-color-white-hover); } .partnership { margin-top: 40px; } .partnership p { color: var(--primary-text-color-white); margin-bottom: 20px; } .partner-profile { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px; } .partner-logo { width: 100px; height: 100px; display: flex; justify-content: center; align-items: center; background-color: #fff; border-radius: 8px; box-shadow: var(--box-shadow-color-white-bg); } .partner-logo img { max-width: 80%; max-height: 80%; object-fit: contain; } .copyright { display: flex; justify-content: center; align-items: center; margin-top: 40px; color: var(--primary-text-color-white); } .copyright p { font-size: 0.9rem; } .vertical-line { width: 2px; height: 20px; background-color: var(--primary-text-color-white); margin: 0 20px; } .footer-logo img { width: 100px; } /*------- Media Queries ----------------------------------- */ @media (max-width: 992px) { header #menu-icon { display: block; } .hideOnMobile { display: none; } .home-content h1 { font-size: 3rem; } .about-content, .featured-services { flex-direction: column; } .about-desc, .featured-services-desc { width: 100%; padding-right: 0; text-align: center; } .about-image-container, .featured-services-img { width: 80%; } .services-card-container, .testimonial-card-container { flex-direction: column; align-items: center; } .services-card, .testimonial-card { width: 80%; margin-bottom: 20px; } .featured-services.fts-2 { flex-direction: column-reverse; } } @media (max-width: 768px) { section { padding: 80px 5%; } .home-content h1 { font-size: 2.5rem; } .home-content p { font-size: 1rem; } .home-btn-container { flex-direction: column; } .home-btn-container .btn { margin-bottom: 10px; } .services-card, .testimonial-card { width: 90%; } } @media (max-width: 576px) { section { padding: 60px 5%; } .home-content h1 { font-size: 2rem; } .home-content p { font-size: 0.9rem; } .services-card, .testimonial-card { width: 100%; } .sidebar { width: 100%; } .menu-close { right: 10%; } }
+// Smooth scrolling for navigation links
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for anchor links
+    const links = document.querySelectorAll('a[href^="#"]');
+    
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = targetSection.offsetTop - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Header scroll effect
+    const header = document.querySelector('.header');
+    let lastScrollTop = 0;
+    
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 100) {
+            header.style.background = 'rgba(255, 255, 255, 0.98)';
+            header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        } else {
+            header.style.background = 'rgba(255, 255, 255, 0.95)';
+            header.style.boxShadow = 'none';
+        }
+        
+        lastScrollTop = scrollTop;
+    });
+    
+    // Mobile menu toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (mobileMenuToggle && navLinks) {
+        mobileMenuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    }
+    
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Observe elements for animation
+    const animatedElements = document.querySelectorAll('.step, .stat-card, .testimonial-card, .trust-feature');
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+    
+    // Counter animation for stats
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const statsObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const finalValue = target.textContent;
+                
+                // Extract number and suffix
+                const match = finalValue.match(/(\d+)(.*)$/);
+                if (match) {
+                    const number = parseInt(match[1]);
+                    const suffix = match[2];
+                    
+                    let current = 0;
+                    const increment = number / 50;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= number) {
+                            current = number;
+                            clearInterval(timer);
+                        }
+                        target.textContent = Math.floor(current) + suffix;
+                    }, 30);
+                }
+                
+                statsObserver.unobserve(target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    statNumbers.forEach(stat => {
+        statsObserver.observe(stat);
+    });
+    
+    // Parallax effect for hero section
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.ai-animation');
+        
+        parallaxElements.forEach(element => {
+            const speed = 0.5;
+            element.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+    });
+    
+    // Button hover effects
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+    
+    // Form validation (if forms are added later)
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Add form validation logic here
+            const formData = new FormData(this);
+            
+            // Show success message
+            showNotification('Thank you! We\'ll be in touch soon.', 'success');
+        });
+    });
+    
+    // Notification system
+    function showNotification(message, type = 'info') {
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.textContent = message;
+        
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: ${type === 'success' ? '#38a169' : '#667eea'};
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            z-index: 10000;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+        `;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.transform = 'translateX(0)';
+        }, 100);
+        
+        setTimeout(() => {
+            notification.style.transform = 'translateX(400px)';
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 300);
+        }, 3000);
+    }
+    
+    // Lazy loading for images (if images are added)
+    const images = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+    
+    images.forEach(img => {
+        imageObserver.observe(img);
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Tab') {
+            document.body.classList.add('keyboard-navigation');
+        }
+    });
+    
+    document.addEventListener('mousedown', function() {
+        document.body.classList.remove('keyboard-navigation');
+    });
+    
+    // Performance optimization: Debounce scroll events
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+    
+    // Apply debouncing to scroll events
+    const debouncedScrollHandler = debounce(function() {
+        // Scroll-dependent animations can go here
+    }, 10);
+    
+    window.addEventListener('scroll', debouncedScrollHandler);
+});
+
+// Add CSS for mobile menu
+const mobileMenuCSS = `
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .mobile-menu-toggle.active {
+        transform: rotate(90deg);
+    }
+}
+
+.keyboard-navigation *:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+`;
+
+// Inject mobile menu CSS
+const style = document.createElement('style');
+style.textContent = mobileMenuCSS;
+document.head.appendChild(style);
 
