@@ -1,236 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/images/android-chrome-512x512.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-        rel="stylesheet">
-    <link href=\'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css\' rel=\'stylesheet\'>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="CSS/style.css">
-    <title>Stellarserve</title>
+    <title>Juru AI - The Future of Recruitment | Stellarserve Solutions</title>
+    <meta name="description" content="Juru AI - Your intelligent AI recruiter that sources, interviews, and qualifies top talent. Built for Africa, ready for the world.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
-    <header>
-        <div class="logo">
-            <a href="#"><img src="images/SS_logo_stellarserve-solutions.png"><span>Stellarserve Solutions</span></a>
-        </div>
-        <nav>
-            <div class="sidebar">
-                <div onclick="hideSidebar( )" id="menu-icon" class="bx bx-x menu-close"></div>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#testimonial">Testimonials</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="/Stellarserve-Solutions/juru-ai/">Juru AI</a></li>
-                </ul>
-                <div class="btn" class="get-started">
-                    <a href="#contact">Hire Now <i class="bx bx-right-arrow-alt"></i></a>
-                </div>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <span class="logo">🌍</span>
+                <span class="brand-name">Stellarserve Solutions</span>
             </div>
-            <div class="top-nav">
-                <ul class="hideOnMobile">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#testimonial">Testimonials</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="/Stellarserve-Solutions/juru-ai/">Juru AI</a></li>
-                </ul>
-                <div class="btn get-started hideOnMobile">
-                    <a href="#about">Hire Now <i class="bx bx-right-arrow-alt"></i></a>
-                </div>
-                <div onclick="showSidebar()" id="menu-icon" class="bx bx-menu menu"></div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#results">Results</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#demo" class="cta-button">Get Started</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
             </div>
         </nav>
     </header>
 
-    <!-- Home Section--------------------------------------- -->
-    <section id="home" class="home">
-        <video autoplay muted loop id="homeVideo" class="home-video">
-            <source src="images/home.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay"></div>
-        <div class="home-content">
-            <h1>Connect, grow, innovate.</h1>
-            <p>Hire the Best Remote Talent Worldwide with Stellarserve Solutions.</p>
-            <div class="home-btn-container">
-                <div class="btn btn1">
-                    <a href="#services">View our services</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Juru AI</span> — The Future of Recruitment, Now in Africa and Beyond
+                </h1>
+                <p class="hero-subtitle">
+                    Your intelligent AI recruiter that sources, interviews, and qualifies top talent — so you don't have to.
+                </p>
+                <p class="hero-description">
+                    Juru AI helps African startups, global companies, and scaleups hire faster, cheaper, and smarter.
+                </p>
+                <div class="hero-cta">
+                    <a href="#demo" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Start Hiring Smarter Today
+                    </a>
+                    <a href="#how-it-works" class="btn btn-secondary">
+                        <i class="fas fa-play"></i>
+                        See How It Works
+                    </a>
                 </div>
-                <div class="btn btn2">
-                    <a href="#contact">Hire Now<i class="bx bx-right-arrow-alt"></i></a>
+            </div>
+            <div class="hero-visual">
+                <img src="./images/juru-ai-hero.jpg" alt="Juru AI Rwandan Man Robotic" class="hero-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Comparison -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Why Juru AI?</h2>
+            <div class="comparison-table">
+                <div class="table-header">
+                    <div class="feature-col">Feature</div>
+                    <div class="manual-col">Manual Hiring</div>
+                    <div class="ai-col">Juru AI</div>
+                </div>
+                <div class="table-row">
+                    <div class="feature-col">Sourcing Time</div>
+                    <div class="manual-col">
+                        <span class="negative">2 weeks+</span>
+                    </div>
+                    <div class="ai-col">
+                        <span class="positive">Instant</span>
+                    </div>
+                </div>
+                <div class="table-row">
+                    <div class="feature-col">Interview Screening</div>
+                    <div class="manual-col">
+                        <span class="negative">100s of hours</span>
+                    </div>
+                    <div class="ai-col">
+                        <span class="positive">24/7 AI</span>
+                    </div>
+                </div>
+                <div class="table-row">
+                    <div class="feature-col">Candidate Vetting</div>
+                    <div class="manual-col">
+                        <span class="negative">Inconsistent</span>
+                    </div>
+                    <div class="ai-col">
+                        <span class="positive">AI + Human Accuracy</span>
+                    </div>
+                </div>
+                <div class="table-row">
+                    <div class="feature-col">Global Payroll Support</div>
+                    <div class="manual-col">
+                        <span class="negative">Manual</span>
+                    </div>
+                    <div class="ai-col">
+                        <span class="positive">Integrated</span>
+                    </div>
+                </div>
+                <div class="table-row">
+                    <div class="feature-col">Candidate Experience</div>
+                    <div class="manual-col">
+                        <span class="negative">Variable</span>
+                    </div>
+                    <div class="ai-col">
+                        <span class="positive">Engaging + Fair</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="horizontal-line"></div>
-
-    <!-- About section---------------------------------------------- -->
-    <section id="about" class="about">
-        <div class="about-content">
-            <div class="about-desc" data-aos="fade-right">
-                <h2>About Us</h2>
-                <p>Stellarserve Solutions revolutionizes tech hiring for startups & SMEs. We connect you with top-tier
-                    remote talent in AI, ML, software development, cybersecurity, and data science.</p>
-            </div>
-            <div class="about-image-container" data-aos="fade-left">
-                <img src="images/About5.jpg" alt="">
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How Ajua AI Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Define Your Role</h3>
+                        <p>Tell Juru what you're hiring for — tech, design, ops, etc.</p>
+                        <div class="step-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Let Juru AI Source & Interview</h3>
+                        <p>Juru instantly scans its talent pool, runs AI-led interviews in 15+ languages, and ranks candidates.</p>
+                        <div class="step-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Review Reports & Hire</h3>
+                        <p>Receive smart profiles with skills assessments, interview insights, and cultural fit scores.</p>
+                        <div class="step-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Onboard Globally</h3>
+                        <p>Juru handles contracts, compliance, and payroll — stress-free hiring across borders.</p>
+                        <div class="step-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Service Section----------------------------------- -->
-    <section id="services" class="services">
-        <div class="services-heading">
-            <h2>Our Services</h2>
-            <p>Find the perfect remote professionals for your business.</p>
-        </div>
-        <div class="services-card-container">
-            <div class="services-card" data-aos="fade-up">
-                <div class="services-card-icon">
-                    <img src="images/Chipping.png" alt="">
+    <!-- Built for Africa -->
+    <section class="africa-section">
+        <div class="container">
+            <div class="africa-content">
+                <h2 class="section-title">Built for Africa, Ready for the World</h2>
+                <p class="africa-description">
+                    Juru AI is designed to empower African recruiters and founders to scale teams globally — without compromise.
+                </p>
+                <div class="africa-features">
+                    <div class="africa-feature">
+                        <i class="fas fa-brain"></i>
+                        <span>Trained on regional + global hiring data</span>
+                    </div>
+                    <div class="africa-feature">
+                        <i class="fas fa-language"></i>
+                        <span>Supports 15+ languages including French, Swahili, Arabic</span>
+                    </div>
+                    <div class="africa-feature">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Trusted by high-growth startups and talent platforms</span>
+                    </div>
                 </div>
-                <h3>AI-Powered Hiring Platform</h3>
-                <p>Efficient, effective, and cost-saving tech recruitment powered by AI.</p>
-            </div>
-            <div class="services-card" data-aos="fade-up">
-                <div class="services-card-icon">
-                    <img src="images/Worldwide Location.png" alt="">
-                </div>
-                <h3>Global Talent Reach</h3>
-                <p>Expand your team globally and achieve your business goals without geographical limitations.</p>
-            </div>
-            <div class="services-card" data-aos="fade-up">
-                <div class="services-card-icon">
-                    <img src="images/Circuit.png" alt="">
-                </div>
-                <h3>Agile Hiring Solutions</h3>
-                <p>Scale your team and drive growth with agile hiring and access to a diverse talent pool.</p>
-            </div>
-            <div class="services-card" data-aos="fade-up">
-                <div class="services-card-icon">
-                    <img src="images/Connected People.png" alt="">
-                </div>
-                <h3>Custom Talent Solutions</h3>
-                <p>Tailored solutions to match your unique hiring needs and build an innovative remote team.</p>
             </div>
         </div>
     </section>
 
-    <div class="featured-services fts-1">
-        <div class="featured-services-img" data-aos="fade-right">
-            <img src="images/About3.jpg" alt="">
+    <!-- Results -->
+    <section id="results" class="results">
+        <div class="container">
+            <h2 class="section-title">The Results Speak for Themselves</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-number">85%</div>
+                    <div class="stat-label">Reduction in Hiring Costs</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-number">10x</div>
+                    <div class="stat-label">Faster Time-to-Hire</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="stat-number">4x</div>
+                    <div class="stat-label">Improvement in Candidate Match Quality</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <div class="stat-number">20%</div>
+                    <div class="stat-label">Boost in Candidate NPS</div>
+                </div>
+            </div>
         </div>
-        <div class="featured-services-desc" data-aos="fade-left">
-            <h2>Top-tier Remote Talent</h2>
-            <p>Connect with skilled remote professionals in AI, ML, software development, cybersecurity, and data
-                science to elevate your business.</p>
-        </div>
-    </div>
-    <div class="featured-services fts-2" data-aos="fade-right">
-        <div class="featured-services-desc">
-            <h2>Efficient and Effective Hiring</h2>
-            <p>Save time and resources with our AI-powered platform that streamlines the recruitment process and ensures
-                quality hires.</p>
-        </div>
-        <div class="featured-services-img" data-aos="fade-left">
-            <img src="images/About2.jpg" alt="">
-        </div>
-    </div>
+    </section>
 
     <!-- Testimonials -->
-    <section id="testimonial" class="testimonial">
-        <div class="testimonial-heading">
-            <h2>Testimonials</h2>
-            <p>See what our customers are saying about our services</p>
-        </div>
-        <div class="testimonial-card-container">
-            <div class="testimonial-card" data-aos="fade-up">
-                <div class="quote">
-                    <img src="images/icons8-get-quote-50.png" alt="">
-                </div>
-                <p>Efficient, effective, and cost-saving tech recruitment powered by AI.</p>
-                <div class="customer-profile">
-                    <img src="images/customer02.jpg" alt="">
-                    <div class="customer-id">
-                        <h4>Patrick L</h4>
-                        <p>Director, Green Ventures</p>
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What People Are Saying</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Juru AI is a game-changer for hiring talent across borders. We cut recruitment time by 90%!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <div class="author-name">Janet N.</div>
+                            <div class="author-title">CEO of an African fintech startup</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="testimonial-card" data-aos="fade-up">
-                <div class="quote">
-                    <img src="images/icons8-get-quote-50.png" alt="">
-                </div>
-                <p>Thanks to Stellarserve Solutions, we were able to scale our team and achieve our business goals
-                    without any geographical limitations. Amazing service!.</p>
-                <div class="customer-profile">
-                    <img src="images/customer01.jpg" alt="">
-                    <div class="customer-id">
-                        <h4>Steven M</h4>
-                        <p>Founder, AC Global</p>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"We were skeptical of AI interviews — until we saw Juru’s candidate reports. This is next-level."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <div class="author-name">Elie M.</div>
+                            <div class="author-title">CTO, Global SaaS Firm</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <div class="contact-heading">
-            <h2>Contact Us</h2>
-        </div>
-        <form id="contact-form"  action="https://formspree.io/f/xvgpzpay" method="post" class="form">
-            <div class="form-group">
-                <label for="name" class="form-label">Name<span class="required">*</span></label>
-                <input id="name" class="form-input" type="text" name="name" required>
+    <!-- Integrations -->
+    <section class="integrations">
+        <div class="container">
+            <h2 class="section-title">Juru AI Integrates With</h2>
+            <div class="integrations-grid">
+                <div class="integration-item">Workable</div>
+                <div class="integration-item">Greenhouse</div>
+                <div class="integration-item">Recruitee</div>
+                <div class="integration-item">Breezy HR</div>
+                <div class="integration-item">SAP SuccessFactors</div>
+                <div class="integration-item">Zoho Recruit</div>
+                <div class="integration-item">More</div>
             </div>
-            <div class="form-group">
-                <label for="email" class="form-label">Email<span class="required">*</span></label>
-                <input id="email" class="form-input" type="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message" class="form-label">Message<span class="required">*</span></label>
-                <textarea id="message" class="form-textarea" name="message" required></textarea>
-            </div>
-            <button class="form-submit" type="submit">Submit</button>
-            <!-- <div class="form-footer">
-                By clicking <b>Submit</b>, you agree to our <a href="" class="terms-link">Terms of Service</a>.
-            </div> -->
-        </form>
-
-        <div id="thank-you-message">
-            <p>Thank you for your message! We will get back to you shortly.</p>
         </div>
     </section>
+
+    <!-- Trust Section -->
+    <section class="trust">
+        <div class="container">
+            <h2 class="section-title">AI You Can Trust</h2>
+            <div class="trust-features">
+                <div class="trust-feature">
+                    <i class="fas fa-bullseye"></i>
+                    <span>Role-specific assessments</span>
+                </div>
+                <div class="trust-feature">
+                    <i class="fas fa-balance-scale"></i>
+                    <span>Bias-aware algorithms</span>
+                </div>
+                <div class="trust-feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>GDPR & Rwandan Data Protection Compliant</span>
+                </div>
+                <div class="trust-feature">
+                    <i class="fas fa-handshake"></i>
+                    <span>Transparent AI + Human review system</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="demo" class="cta-section">
+        <div class="container">
+            <h2 class="section-title">Start Hiring Smarter Today</h2>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">
+                    <i class="fas fa-calendar"></i>
+                    Book a Demo
+                          <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-gift"></i>
+                        Try Juru AI Free for 7 Days
+                    </a>                <a href="#" class="btn btn-outline">
+                    <i class="fas fa-comments"></i>
+                    Speak with a Solutions Consultant
+                </a>
+            </div>
+            <div class="main-cta">
+                <a href="#" class="btn btn-hero">
+                    <i class="fas fa-rocket"></i>
+                    Get Started Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-        <h2>Connect with us</h2>
-        <div class="social-icons">
-            <a href="#"><i class=\'bx bxl-twitter\'></i></a>
-            <a href="#"><i class=\'bx bxl-linkedin\'></i></a>
-        </div>
-        <div class="copyright">
-            <p>&copy; Copyright 2024. All rights reserved.</p>
-            <div class="vertical-line"></div>
-            <div class="footer-logo">
-                <a href=""><img src="images/SS_logo_stellarserve-solutions.png" alt="">
-                    <span>Stellarserve Solutions.</span></a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Juru AI by Stellarserve Solutions</h3>
+                    <p>Built in Africa. Hiring for the world.</p>
+                </div>
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kigali, Rwanda</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <a href="https://www.stellarservesolutions.online">www.stellarservesolutions.online</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Stellarserve Solutions. All rights reserved.</p>
             </div>
         </div>
-
     </footer>
-    <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
-    <script src="script.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-</body>
 
+    <script src="script.js"></script>
+</body>
 </html>
+
