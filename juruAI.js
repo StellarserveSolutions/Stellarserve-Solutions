@@ -11,8 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     anchorPlacement: "top-bottom",
     disable: window.innerWidth < 768 ? true : false, // Disable animations on mobile
   });
-
-  // Add parallax effect to hero section
+  // Add parallax effect to hero section (modified to be more subtle)
   const heroSection = document.querySelector(".hero");
   const heroContent = document.querySelector(".hero-content");
   const heroVisual = document.querySelector(".hero-visual");
@@ -20,10 +19,12 @@ document.addEventListener("DOMContentLoaded", function () {
   if (heroSection && heroContent && heroVisual) {
     window.addEventListener("scroll", function () {
       const scrollPosition = window.scrollY;
-      if (scrollPosition < 800) {
-        const parallaxSpeed = scrollPosition * 0.15;
-        heroContent.style.transform = `translateY(${parallaxSpeed}px)`;
+      if (scrollPosition < 400) {
+        // Reduced the scroll range
+        const parallaxSpeed = scrollPosition * 0.08; // Reduced the speed
+        // Only apply transform to the hero visual, not the content with buttons
         heroVisual.style.transform = `translateY(${parallaxSpeed * 0.6}px)`;
+        // Don't transform the content to avoid button visibility issues
       }
     });
   }

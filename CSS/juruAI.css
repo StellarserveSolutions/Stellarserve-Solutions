@@ -223,17 +223,18 @@ main {
 
 /* Hero Section */
 .hero {
-  padding: 30px 0 100px; /* Increased bottom padding to prevent content from being cut off */
+  padding: 30px 0 120px; /* Increased bottom padding even more to prevent content from being cut off */
   margin-top: 0; /* Explicitly remove top margin */
-  margin-bottom: 0;
+  margin-bottom: 20px; /* Add some margin at the bottom */
   border-bottom: none;
   background-color: #ffffff; /* Changed background to white */
   color: #333; /* Changed text color to dark for visibility */
   position: relative;
-  overflow: hidden;
-  min-height: 500px; /* Ensure minimum height for hero section */
+  overflow: visible; /* Changed from hidden to visible */
+  min-height: 550px; /* Increased minimum height for hero section */
   transition: padding 0.3s ease, margin 0.3s ease; /* Smooth transition for spacing changes */
   padding-top: 120px; /* Adjust as needed to clear the fixed header */
+  z-index: 2; /* Ensure hero section has higher z-index */
 }
 
 .hero::before {
@@ -312,6 +313,10 @@ main {
   animation: none !important;
   transform: none !important;
   justify-content: flex-start;
+  position: relative;
+  z-index: 10; /* Higher z-index to ensure buttons appear above other elements */
+  padding-bottom: 15px; /* Extra padding at the bottom */
+  border-bottom: none;
 }
 
 .btn {
@@ -366,6 +371,8 @@ main {
   transform: none !important;
   text-align: center !important;
   padding: 1rem 2rem;
+  position: relative;
+  z-index: 5;
 }
 
 .btn-outline:hover {
@@ -452,6 +459,10 @@ section:nth-child(even) {
 /* Features Section */
 .features {
   background: white;
+  position: relative;
+  z-index: 1;
+  margin-top: 30px; /* Add spacing between hero and features */
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .comparison-table {
@@ -1312,14 +1323,18 @@ section:nth-child(even) {
   .hero-cta {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* Changed to center on mobile */
+    padding-bottom: 20px; /* Added extra padding at bottom */
+    z-index: 10; /* Ensure high z-index on mobile too */
+    position: relative;
   }
 
   .hero-cta a {
     margin: 10px 0;
-    display: block;
+    display: block !important;
     width: 100%;
     max-width: 280px;
+    z-index: 5;
   }
   .hero-cta a.btn-outline {
     margin-top: 15px;
@@ -1328,6 +1343,7 @@ section:nth-child(even) {
     visibility: visible !important;
     color: #38a169;
     border: 2px solid #38a169;
+    z-index: 5;
   }
 }
 

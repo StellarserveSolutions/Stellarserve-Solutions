@@ -56,41 +56,9 @@ section {
   width: 100%;
 }
 
-.loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #1f2f38; /* Background color */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10009999;
-}
-
-.spinner {
-  width: 80px;
-  height: 80px;
-  border: 8px solid rgba(255, 255, 255, 0.3);
-  border-top: 8px solid #ffffff; /* White spinner */
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-body.loaded .loader {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+/* Main content should always be visible */
+#main-content {
+  opacity: 1;
 }
 
 /*------- Style for Header section ----------------------------------- */
@@ -226,8 +194,6 @@ header #menu-icon {
 }
 
 /*------- Style for Home section ----------------------------------- */
-
-/* add a loader animation for 5 seconds before showing the page */
 
 section {
   padding: 100px 10%;
@@ -910,12 +876,12 @@ section.testimonial {
   }
 }
 #thank-you-message {
-    display: none; /* Hidden by default */
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #d4edda; /* Light green background */
-    color: #155724; /* Dark green text */
-    border: 1px solid #c3e6cb;
-    border-radius: 5px;
-    text-align: center;
+  display: none; /* Hidden by default */
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #d4edda; /* Light green background */
+  color: #155724; /* Dark green text */
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  text-align: center;
 }
