@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Africa map outline - simplified for overlay purposes -->
+  <path d="M705,175 C723,175 742,176 760,179 C778,182 792,189 815,201 C838,213 872,225 890,237 
+           C908,249 922,265 937,283 C952,301 967,317 979,338 C991,359 998,377 1006,400 
+           C1014,423 1023,447 1029,470 C1035,493 1041,517 1044,542 C1047,567 1049,594 1047,622 
+           C1045,650 1040,677 1034,704 C1028,731 1020,759 1013,786 C1006,813 998,837 989,859 
+           C980,881 970,898 953,918 C936,938 924,953 908,968 C892,983 874,998 857,1013 
+           C840,1028 828,1041 817,1057 C806,1073 794,1089 782,1105 C770,1121 758,1136 744,1151 
+           C730,1166 714,1180 697,1193 C680,1206 664,1219 649,1226 C634,1233 619,1235 606,1233 
+           C593,1231 580,1225 564,1216 C548,1207 531,1196 515,1181 C499,1166 486,1146 472,1127 
+           C458,1108 443,1086 425,1066 C407,1046 389,1031 367,1015 C345,999 319,979 295,960 
+           C271,941 254,924 238,902 C222,880 208,855 199,830 C190,805 183,779 175,752 
+           C167,725 156,698 148,672 C140,646 133,623 127,600 C121,577 116,555 110,532 
+           C104,509 98,487 94,465 C90,443 87,420 85,398 C83,376 81,356 80,335 C79,314 79,294 79,273 
+           C79,252 80,232 85,211 C90,190 96,166 105,144 C114,122 128,102 142,82 
+           C156,62 170,42 183,23 C196,4 207,-10 223,-18 C239,-26 258,-30 280,-32 
+           C302,-34 325,-35 348,-33 C371,-31 401,-26 422,-20 C443,-14 460,-8 480,-1 
+           C500,6 520,13 541,21 C562,29 586,40 610,50 C634,60 657,69 678,80 C699,91 716,105 729,119 
+           C742,133 752,147 763,159 C774,171 787,182 705,175 Z" 
+        fill="none" stroke="#ffffff" stroke-width="3" opacity="0.15"/>
+
+  <!-- Connection nodes representing major African tech hubs -->
+  <g id="tech-hubs">
+    <circle cx="635" cy="420" r="8" fill="#38a169" opacity="0.7">
+      <animate attributeName="r" values="8;12;8" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="550" cy="320" r="6" fill="#38a169" opacity="0.7">
+      <animate attributeName="r" values="6;9;6" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="660" cy="600" r="10" fill="#38a169" opacity="0.7">
+      <animate attributeName="r" values="10;15;10" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="510" cy="520" r="7" fill="#38a169" opacity="0.7">
+      <animate attributeName="r" values="7;11;7" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="580" cy="700" r="9" fill="#38a169" opacity="0.7">
+      <animate attributeName="r" values="9;13;9" dur="3.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="720" cy="480" r="8" fill="#38a169" opacity="0.7">
+      <animate attributeName="r" values="8;12;8" dur="3.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Connection lines between nodes -->
+  <g id="connections" stroke="#38a169" stroke-width="1.5" opacity="0.4">
+    <line x1="635" y1="420" x2="550" y2="320">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite"/>
+    </line>
+    <line x1="635" y1="420" x2="660" y2="600">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="550" y1="320" x2="510" y2="520">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="4s" repeatCount="indefinite"/>
+    </line>
+    <line x1="660" y1="600" x2="580" y2="700">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3.2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="510" y1="520" x2="720" y2="480">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3.8s" repeatCount="indefinite"/>
+    </line>
+    <line x1="720" y1="480" x2="635" y2="420">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="4.2s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Data flow animation -->
+  <g id="data-flow">
+    <circle cx="0" cy="0" r="3" fill="#ffffff">
+      <animateMotion path="M635,420 C600,380 570,340 550,320" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="3" fill="#ffffff">
+      <animateMotion path="M550,320 C530,400 520,470 510,520" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="3" fill="#ffffff">
+      <animateMotion path="M510,520 C580,505 650,490 720,480" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="3" fill="#ffffff">
+      <animateMotion path="M720,480 C690,460 660,440 635,420" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="3" fill="#ffffff">
+      <animateMotion path="M635,420 C645,490 655,560 660,600" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="3" fill="#ffffff">
+      <animateMotion path="M660,600 C630,640 600,675 580,700" dur="2.3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Background network pattern -->
+  <g id="network-pattern" stroke="#ffffff" stroke-width="0.5" opacity="0.1">
+    <path d="M300,200 C400,250 500,220 600,300 S700,400 800,380 S900,300 1000,350" />
+    <path d="M400,300 C500,350 600,320 700,400 S800,500 900,480 S1000,400 1100,450" />
+    <path d="M300,400 C400,450 500,420 600,500 S700,600 800,580 S900,500 1000,550" />
+    <path d="M200,500 C300,550 400,520 500,600 S600,700 700,680 S800,600 900,650" />
+    <path d="M300,600 C400,650 500,620 600,700 S700,800 800,780 S900,700 1000,750" />
+  </g>
+</svg>
