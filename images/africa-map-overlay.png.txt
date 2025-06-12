@@ -1,0 +1,14 @@
+/* This is a placeholder for a PNG file.
+   Since we can't directly create binary files like PNG through text editing,
+   an SVG version has been created that can be converted to PNG separately.
+   
+   The SVG file path is: c:\Users\hp\Desktop\Stellarserve-Solutions\images\africa-map-overlay.svg
+   
+   To convert the SVG to PNG:
+   1. Open the SVG file in a browser
+   2. Take a screenshot or use browser's "Save as" feature to save as PNG
+   3. Save it as "africa-map-overlay.png" in the same directory
+   
+   Alternatively, tools like ImageMagick can be used to convert SVG to PNG:
+   convert africa-map-overlay.svg africa-map-overlay.png
+*/
