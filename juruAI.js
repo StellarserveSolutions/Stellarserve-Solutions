@@ -11,6 +11,30 @@ document.addEventListener("DOMContentLoaded", function () {
     anchorPlacement: "top-bottom",
     disable: window.innerWidth < 768 ? true : false, // Disable animations on mobile
   });
+
+  // Dark mode functionality
+  const darkModeToggle = document.getElementById("dark-mode-toggle");
+  const htmlElement = document.documentElement;
+
+  // Check for saved user preference, if any
+  const savedTheme = localStorage.getItem("theme");
+
+  // If user previously enabled dark mode, check the toggle
+  if (savedTheme === "dark") {
+    htmlElement.setAttribute("data-theme", "dark");
+    darkModeToggle.checked = true;
+  }
+
+  // Listen for toggle changes
+  darkModeToggle.addEventListener("change", function () {
+    if (this.checked) {
+      htmlElement.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      htmlElement.removeAttribute("data-theme");
+      localStorage.setItem("theme", "light");
+    }
+  });
   // Add parallax effect to hero section (modified to be more subtle)
   const heroSection = document.querySelector(".hero");
   const heroContent = document.querySelector(".hero-content");
@@ -28,12 +52,19 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-
   // Initialize the loader
   const loader = document.querySelector(".loader");
   const mainContent = document.querySelector("body");
 
   window.addEventListener("load", function () {
+    // Ensure loader respects current theme
+    if (
+      loader &&
+      document.documentElement.getAttribute("data-theme") === "dark"
+    ) {
+      loader.style.backgroundColor = "#1a202c";
+    }
+
     // Hide loader and show content when page is fully loaded
     setTimeout(function () {
       if (loader) {
@@ -43,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
       mainContent.classList.add("loaded");
     }, 800);
   });
-
   // Mobile menu toggle
   const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
   const navLinks = document.querySelector(".nav-links");
@@ -62,6 +92,13 @@ document.addEventListener("DOMContentLoaded", function () {
           icon.classList.remove("bx-x");
           icon.classList.add("bx-menu");
         }
+      }
+
+      // Ensure dark mode toggle is visible in the mobile menu
+      const themeToggle = document.querySelector(".theme-toggle");
+      if (themeToggle && navLinks.classList.contains("active")) {
+        themeToggle.style.visibility = "visible";
+        themeToggle.style.opacity = "1";
       }
     });
   }

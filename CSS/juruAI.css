@@ -5,20 +5,125 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* Light mode variables */
+  --background-color: #f4f4f4;
+  --text-color: #333;
+  --heading-color: #2d3748;
+  --card-bg-color: #ffffff;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --primary-color: #38a169;
+  --primary-color-rgb: 56, 161, 105; /* RGB values for primary color */
+  --primary-color-light: rgba(56, 161, 105, 0.1);
+  --primary-color-hover: #2f855a;
+  --secondary-bg: #ffffff;
+  --table-header-bg: #f8f9fa;
+  --negative-color: #e53e3e;
+  --positive-color: #38a169;
+  --header-bg: rgba(255, 255, 255, 0.95);
+  --footer-bg: #2d3748;
+  --footer-text: #f7fafc;
+  --section-alt-bg: #f9fafb;
+  --africa-bg: linear-gradient(135deg, #ebf4ff 0%, #e6fffa 100%);
+}
+
+/* Dark mode variables */
+[data-theme="dark"] {
+  --background-color: #1a202c;
+  --text-color: #e2e8f0;
+  --heading-color: #f7fafc;
+  --card-bg-color: #2d3748;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --primary-color: #4fd1c5;
+  --primary-color-rgb: 79, 209, 197; /* RGB values for primary color in dark mode */
+  --primary-color-light: rgba(79, 209, 197, 0.1);
+  --primary-color-hover: #38b2ac;
+  --secondary-bg: #2d3748;
+  --table-header-bg: #4a5568;
+  --negative-color: #fc8181;
+  --positive-color: #68d391;
+  --header-bg: rgba(26, 32, 44, 0.95);
+  --footer-bg: #171923;
+  --footer-text: #e2e8f0;
+  --section-alt-bg: #2d3748;
+  --africa-bg: linear-gradient(135deg, #2a4365 0%, #234e52 100%);
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.6;
-  color: #333;
-  background-color: #f4f4f4;
+  color: var(--text-color);
+  background-color: var(--background-color);
   min-height: 100vh;
   padding-top: 110px; /* Increased padding to account for larger fixed header */
   overflow-x: hidden; /* Prevent horizontal scrolling */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+/* Dark mode toggle styles */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  position: relative;
+}
+
+.dark-mode-checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.dark-mode-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50px;
+  height: 25px;
+  background: #4a5568;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dark-mode-label i {
+  color: #f0f0f0;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.toggle-ball {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  width: 19px;
+  height: 19px;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.dark-mode-checkbox:checked + .dark-mode-label {
+  background: var(--primary-color);
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode-checkbox:checked + .dark-mode-label .toggle-ball {
+  transform: translateX(25px);
+}
+
+.dark-mode-checkbox:focus + .dark-mode-label {
+  box-shadow: 0 0 0 2px rgba(56, 161, 105, 0.5);
 }
 
 /* Loader styles */
@@ -28,7 +133,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: var(--background-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,12 +144,13 @@ body {
 .spinner {
   width: 60px;
   height: 60px;
-  border: 5px solid rgba(56, 161, 105, 0.1);
+  border: 5px solid rgba(var(--primary-color-rgb), 0.1);
   border-radius: 50%;
-  border-top-color: #38a169;
-  border-bottom-color: #38a169;
+  border-top-color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
   animation: spin 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
-  box-shadow: 0 0 20px rgba(56, 161, 105, 0.2);
+  box-shadow: 0 0 20px var(--shadow-color);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 @keyframes spin {
@@ -89,17 +195,17 @@ main {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--header-bg);
   backdrop-filter: blur(10px);
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid var(--border-color);
   transition: all 0.4s ease;
   padding: 5px 0;
 }
 
 .header.scrolled {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 10px 30px var(--shadow-color);
+  background: var(--header-bg);
   padding: 0.6rem 0;
 }
 
@@ -167,17 +273,17 @@ main {
 
 .nav-links a {
   text-decoration: none;
-  color: #4a5568;
+  color: var(--heading-color);
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #38a169; /* Green hover for links */
+  color: var(--primary-color);
 }
 
 .cta-button {
-  background-color: #38a169; /* Green CTA button */
+  background-color: var(--primary-color);
   color: white !important;
   padding: 0.5rem 1.5rem;
   border-radius: 25px;
@@ -186,13 +292,15 @@ main {
 
 .cta-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(56, 161, 105, 0.3); /* Green shadow */
+  box-shadow: 0 10px 25px rgba(56, 161, 105, 0.3);
 }
 
 .mobile-menu-toggle {
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
+  color: var(--heading-color);
+  transition: color 0.3s ease;
 }
 
 /* Enhanced mobile menu styles */
@@ -203,11 +311,12 @@ main {
   top: 80px;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.98);
+  background: var(--header-bg);
   padding: 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px var(--shadow-color);
   animation: slideDown 0.3s ease-in-out;
   z-index: 999;
+  transition: background-color 0.3s ease;
 }
 
 @keyframes slideDown {
@@ -227,12 +336,13 @@ main {
   margin-top: 0; /* Explicitly remove top margin */
   margin-bottom: 20px; /* Add some margin at the bottom */
   border-bottom: none;
-  background-color: #ffffff; /* Changed background to white */
-  color: #333; /* Changed text color to dark for visibility */
+  background-color: var(--card-bg-color); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
   position: relative;
   overflow: visible; /* Changed from hidden to visible */
   min-height: 550px; /* Increased minimum height for hero section */
-  transition: padding 0.3s ease, margin 0.3s ease; /* Smooth transition for spacing changes */
+  transition: padding 0.3s ease, margin 0.3s ease, background-color 0.3s ease,
+    color 0.3s ease; /* Smooth transitions */
   padding-top: 120px; /* Adjust as needed to clear the fixed header */
   z-index: 2; /* Ensure hero section has higher z-index */
 }
@@ -273,15 +383,15 @@ main {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1.5rem;
-  color: #2d3748; /* Ensure title is dark */
+  color: var(--heading-color);
 }
 
 .gradient-text {
   background: linear-gradient(
     135deg,
-    #38a169 0%,
+    var(--primary-color) 0%,
     #667eea 100%
-  ); /* Green to blue gradient */
+  ); /* Use variable for primary color */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -292,14 +402,14 @@ main {
   font-weight: 500;
   margin-bottom: 1rem;
   opacity: 0.9;
-  color: #333; /* Ensure subtitle is dark */
+  color: var(--text-color);
 }
 
 .hero-description {
   font-size: 1.2rem;
   margin-bottom: 2rem;
   opacity: 0.8;
-  color: #333; /* Ensure description is dark */
+  color: var(--text-color);
 }
 
 .hero-cta {
@@ -339,13 +449,17 @@ main {
 }
 
 .btn-primary {
-  background-color: #38a169; /* Green primary button */
+  background-color: var(
+    --primary-color
+  ); /* Using variable for primary button */
   color: white;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(56, 161, 105, 0.4);
+  box-shadow: 0 15px 35px rgba(var(--primary-color-rgb), 0.4);
 }
 
 .btn-secondary {
@@ -361,8 +475,8 @@ main {
 
 .btn-outline {
   background: transparent;
-  color: #38a169; /* Green outline button */
-  border: 2px solid #38a169;
+  color: var(--primary-color); /* Using variable for outline button */
+  border: 2px solid var(--primary-color);
   width: auto;
   display: inline-flex !important;
   opacity: 1 !important;
@@ -373,24 +487,28 @@ main {
   padding: 1rem 2rem;
   position: relative;
   z-index: 5;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn-outline:hover {
-  background: #38a169;
+  background: var(--primary-color);
   color: white;
   transform: translateY(-2px);
 }
 
 .btn-hero {
-  background-color: #38a169; /* Green hero button */
+  background-color: var(--primary-color); /* Using variable for hero button */
   color: white;
   font-size: 1.2rem;
   padding: 1.2rem 3rem;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .btn-hero:hover {
   transform: translateY(-3px);
-  box-shadow: 0 20px 40px rgba(56, 161, 105, 0.4);
+  box-shadow: 0 20px 40px rgba(var(--primary-color-rgb), 0.4);
 }
 
 /* Hero Visual */
@@ -444,34 +562,35 @@ main {
   font-weight: 700;
   text-align: center;
   margin-bottom: 3rem;
-  color: #2d3748; /* Dark text for section titles */
+  color: var(--heading-color);
 }
 
 section {
   padding: 80px 0;
-  background: white;
+  background: var(--card-bg-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 section:nth-child(even) {
-  background: #f7fafc;
+  background: var(--section-alt-bg);
 }
 
 /* Features Section */
 .features {
-  background: white;
+  background: var(--card-bg-color);
   position: relative;
-  z-index: 1;
-  margin-top: 30px; /* Add spacing between hero and features */
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
 }
 
 .comparison-table {
   max-width: 800px;
-  margin: 0 auto;
-  background: white;
+  margin: 20px auto;
+  background: var(--card-bg-color);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 60px var(--shadow-color);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .table-header {
@@ -501,7 +620,17 @@ section:nth-child(even) {
 
 .feature-col {
   font-weight: 600;
-  color: #2d3748;
+  color: #72968a;
+}
+
+/* Make feature-col text white in dark mode */
+body.dark-mode .feature-col {
+  color: white;
+}
+
+/* Alternatively, if you're using a dark-theme class instead of body.dark-mode */
+.dark-theme .feature-col {
+  color: white;
 }
 
 .manual-col,
@@ -521,7 +650,8 @@ section:nth-child(even) {
 
 /* How It Works */
 .how-it-works {
-  background: #f7fafc;
+  background: var(--section-alt-bg);
+  transition: background-color 0.3s ease;
 }
 
 .steps {
@@ -533,13 +663,14 @@ section:nth-child(even) {
 }
 
 .step {
-  background: white;
+  background: var(--card-bg-color);
   padding: 2rem;
   border-radius: 20px;
   text-align: center;
   position: relative;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .step:hover {
@@ -553,7 +684,7 @@ section:nth-child(even) {
   transform: translateX(-50%);
   width: 40px;
   height: 40px;
-  background-color: #38a169; /* Green step number */
+  background-color: var(--primary-color); /* Using variable for step number */
   color: white;
   border-radius: 50%;
   display: flex;
@@ -561,36 +692,37 @@ section:nth-child(even) {
   justify-content: center;
   font-weight: 700;
   font-size: 1.2rem;
+  transition: background-color 0.3s ease;
 }
 
 .step h3 {
   margin: 1rem 0;
-  color: #2d3748;
+  color: var(--heading-color);
   font-size: 1.3rem;
+  transition: color 0.3s ease;
 }
 
 .step p {
-  color: #4a5568;
+  color: var(--text-color);
   margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
 }
 
 .step-icon {
   font-size: 3rem;
-  color: #38a169; /* Green step icon */
+  color: var(--primary-color); /* Using variable for step icon */
   margin-top: 1rem;
+  transition: color 0.3s ease;
 }
 
 /* Africa Section */
 .africa-section {
-  background: linear-gradient(
-    to bottom,
-    #2d3748,
-    #1a202c
-  ); /* Enhanced gradient background */
-  color: #2d3748;
+  background: var(--africa-bg); /* Using variable for Africa section */
+  color: var(--text-color);
   position: relative;
   overflow: hidden;
-  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 100px var(--shadow-color);
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .africa-section::before {
@@ -630,13 +762,16 @@ section:nth-child(even) {
 }
 
 .africa-section .section-title {
-  color: #2d3748;
+  color: var(--footer-text);
+  transition: color 0.3s ease;
 }
 
 .africa-description {
   font-size: 1.3rem;
   margin-bottom: 3rem;
   opacity: 0.9;
+  color: var(--footer-text);
+  transition: color 0.3s ease;
 }
 
 .africa-features {
@@ -651,39 +786,41 @@ section:nth-child(even) {
   gap: 1rem;
   padding: 1.5rem;
   background: rgba(20, 26, 40, 0.75);
-  border: 1px solid rgba(56, 161, 105, 0.3);
+  border: 1px solid rgba(var(--primary-color-rgb), 0.3);
   border-radius: 15px;
   backdrop-filter: blur(10px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease,
+    border-color 0.3s ease;
   position: relative;
   z-index: 1;
 }
 
 .africa-feature:hover {
   transform: translateY(-5px);
-  background: rgba(56, 161, 105, 0.3);
-  border-color: rgba(56, 161, 105, 0.6);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  background: rgba(var(--primary-color-rgb), 0.3);
+  border-color: rgba(var(--primary-color-rgb), 0.6);
+  box-shadow: 0 8px 25px var(--shadow-color);
 }
 
 .africa-feature i {
   font-size: 2rem;
-  color: #38a169; /* Green icon */
-  filter: drop-shadow(0 0 5px rgba(56, 161, 105, 0.4));
-  transition: transform 0.3s ease, filter 0.3s ease;
+  color: var(--primary-color);
+  filter: drop-shadow(0 0 5px rgba(var(--primary-color-rgb), 0.4));
+  transition: transform 0.3s ease, filter 0.3s ease, color 0.3s ease;
 }
 
 .africa-feature:hover i {
   transform: scale(1.15);
-  filter: drop-shadow(0 0 8px rgba(56, 161, 105, 0.7));
+  filter: drop-shadow(0 0 8px rgba(var(--primary-color-rgb), 0.7));
 }
 
 .africa-feature span {
   font-weight: 600;
-  color: #ffffff;
+  color: var(--footer-text);
   font-size: 1.05rem;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: color 0.3s ease;
 }
 
 .africa-feature.feature-highlight {
@@ -708,7 +845,8 @@ section:nth-child(even) {
 
 /* Results Section */
 .results {
-  background: white;
+  background: var(--secondary-bg);
+  transition: background-color 0.3s ease;
 }
 
 .stats-grid {
@@ -722,14 +860,14 @@ section:nth-child(even) {
 }
 
 .stat-card {
-  background-color: #38a169; /* Green stat card */
+  background-color: var(--primary-color); /* Using variable for stat card */
   color: white;
   padding: 3rem 2rem;
   border-radius: 20px;
   text-align: center;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .stat-card:hover {
@@ -776,7 +914,8 @@ section:nth-child(even) {
 
 /* Testimonials */
 .testimonials {
-  background: #f7fafc;
+  background: var(--section-alt-bg);
+  transition: background-color 0.3s ease;
 }
 
 .testimonials-grid {
@@ -788,11 +927,12 @@ section:nth-child(even) {
 }
 
 .testimonial-card {
-  background: white;
+  background: var(--card-bg-color);
   padding: 2.5rem;
   border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 40px var(--shadow-color);
   position: relative;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .testimonial-card::before {
@@ -801,34 +941,39 @@ section:nth-child(even) {
   top: -10px;
   left: 20px;
   font-size: 4rem;
-  color: #38a169; /* Green quote */
+  color: var(--primary-color); /* Using variable for quote */
   font-family: serif;
+  transition: color 0.3s ease;
 }
 
 .testimonial-content p {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: #2d3748;
+  color: var(--heading-color); /* Using variable for text */
   margin-bottom: 2rem;
   font-style: italic;
+  transition: color 0.3s ease;
 }
 
 .author-name {
   font-weight: 600;
-  color: #2d3748;
+  color: var(--heading-color);
   margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
 }
 
 .author-title {
-  color: #38a169; /* Green author title */
+  color: var(--primary-color); /* Using variable for author title */
   font-size: 0.9rem;
+  transition: color 0.3s ease;
 }
 
 /* Integrations */
 .integrations {
-  background: white;
+  background: var(--secondary-bg);
   position: relative;
   overflow: hidden;
+  transition: background-color 0.3s ease;
 }
 
 .integrations-grid {
@@ -842,26 +987,33 @@ section:nth-child(even) {
 }
 
 .integration-item {
-  background: #f7fafc;
+  background: var(--section-alt-bg);
   padding: 1.5rem;
   border-radius: 15px;
   text-align: center;
   font-weight: 600;
-  color: #4a5568;
+  color: var(--text-color);
   border: 2px solid transparent;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 .integration-item:hover {
-  border-color: #38a169; /* Green border on hover */
-  background: white;
+  border-color: var(--primary-color); /* Using variable for border */
+  background: var(--card-bg-color);
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(56, 161, 105, 0.2);
+  box-shadow: 0 10px 25px var(--shadow-color);
 }
 
 /* Trust Section */
 .trust {
-  background: #f7fafc;
+  background: var(--section-alt-bg);
+  transition: background-color 0.3s ease;
+}
+
+.trust .container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .trust-features {
@@ -877,10 +1029,11 @@ section:nth-child(even) {
   align-items: center;
   gap: 1rem;
   padding: 2rem;
-  background: white;
+  background: var(--card-bg-color);
   border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 5px 20px var(--shadow-color);
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .trust-feature:hover {
@@ -889,23 +1042,27 @@ section:nth-child(even) {
 
 .trust-feature i {
   font-size: 2rem;
-  color: #38a169; /* Green icon */
+  color: var(--primary-color); /* Using variable for icon */
+  transition: color 0.3s ease;
 }
 
 .trust-feature span {
   font-weight: 500;
-  color: #2d3748;
+  color: var(--heading-color);
+  transition: color 0.3s ease;
 }
 
 /* CTA Section */
 .cta-section {
-  background-color: #2d3748; /* Dark background for CTA */
-  color: white;
+  background-color: var(--footer-bg); /* Using variable for CTA background */
+  color: var(--footer-text);
   text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .cta-section .section-title {
-  color: white;
+  color: var(--footer-text);
+  transition: color 0.3s ease;
 }
 
 .cta-description {
@@ -934,14 +1091,15 @@ section:nth-child(even) {
 }
 
 .cta-buttons .btn-primary {
-  background: #38a169;
+  background: var(--primary-color);
   color: white;
-  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .cta-buttons .main-cta:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(56, 161, 105, 0.3);
+  box-shadow: 0 15px 30px rgba(var(--primary-color-rgb), 0.3);
 }
 
 .cta-buttons .btn-outline {
@@ -957,9 +1115,10 @@ section:nth-child(even) {
 
 /* Footer */
 .footer {
-  background-color: #1a202c; /* Darker background for footer */
-  color: white;
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
   padding: 3rem 0 1rem;
+  transition: background-color 0.3s ease;
 }
 
 .footer-content {
@@ -971,11 +1130,13 @@ section:nth-child(even) {
 
 .footer-brand h3 {
   margin-bottom: 1rem;
-  color: #38a169; /* Green for footer brand */
+  color: var(--primary-color); /* Using variable for footer brand */
+  transition: color 0.3s ease;
 }
 
 .footer-brand p {
   opacity: 0.8;
+  transition: color 0.3s ease;
 }
 
 .contact-item {
@@ -986,19 +1147,20 @@ section:nth-child(even) {
 }
 
 .contact-item a {
-  color: #ffffff; /* White for footer contact links */
+  color: var(--footer-text); /* Using variable for footer contact links */
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .contact-item a:hover {
-  color: #38a169; /* Green on hover */
+  color: var(--primary-color); /* Using variable for hover */
   text-decoration: none;
 }
 
 .footer-links h3 {
   margin-bottom: 1.5rem;
-  color: #38a169;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
 }
 
 .footer-links ul {
@@ -1010,20 +1172,21 @@ section:nth-child(even) {
 }
 
 .footer-links ul li a {
-  color: #ffffff;
+  color: var(--footer-text);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-links ul li a:hover {
-  color: #38a169;
+  color: var(--primary-color);
 }
 
 .footer-bottom {
   text-align: center;
   padding-top: 2rem;
-  border-top: 1px solid #2d3748;
+  border-top: 1px solid var(--border-color);
   opacity: 0.7;
+  transition: border-color 0.3s ease;
 }
 
 /* Toast notifications for buttons */
@@ -1035,16 +1198,17 @@ section:nth-child(even) {
 }
 
 .toast {
-  background-color: rgba(56, 161, 105, 0.9);
+  background-color: rgba(var(--primary-color-rgb), 0.9);
   color: white;
   padding: 12px 20px;
   border-radius: 4px;
   margin-top: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 10px var(--shadow-color);
   display: flex;
   align-items: center;
   animation: fadeInUp 0.3s ease-out forwards;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out, background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 @keyframes fadeInUp {
@@ -1341,9 +1505,10 @@ section:nth-child(even) {
     display: inline-block !important;
     opacity: 1 !important;
     visibility: visible !important;
-    color: #38a169;
-    border: 2px solid #38a169;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
     z-index: 5;
+    transition: color 0.3s ease, border-color 0.3s ease;
   }
 }
 
@@ -1379,5 +1544,23 @@ section:nth-child(even) {
 @media (max-width: 480px) {
   .hero-cta .btn {
     width: 100%;
+  }
+}
+
+/* Mobile styles for theme toggle */
+@media (max-width: 768px) {
+  .theme-toggle {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    z-index: 1000;
+    margin: 0;
+  }
+
+  .nav-links.active .theme-toggle {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 15px auto;
   }
 }
