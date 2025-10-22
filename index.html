@@ -270,28 +270,20 @@
 
     <!-- Voiceflow Juru Agent Widget -->
     <script type="text/javascript">
-      (function(d, t) {
-          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-          v.onload = function() {
-            window.voiceflow.chat.load({
-              verify: { projectID: '68f8d9b47cb44836ed960007' },
-              url: 'https://general-runtime.voiceflow.com',
-              versionID: 'production',
-              voice: {
-                url: "https://runtime-api.voiceflow.com"
-              },
-              welcomeMessage: "Hello! I’m Juru Agent from Stellarserve Solutions. How can I assist you today? You can also book a free consultation here: https://calendly.com/stellarserve/consultation",
-              theme: {
-                brandColor: "#0073E6",
-                textColor: "#ffffff"
-              }
-            });
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '68f8d9b47cb44836ed960007' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production',
+          voice: {
+            url: "https://runtime-api.voiceflow.com"
           }
-          v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
-          v.type = "text/javascript"; 
-          s.parentNode.insertBefore(v, s);
-      })(document, 'script');
-    </script>
-
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
   </body>
 </html>
