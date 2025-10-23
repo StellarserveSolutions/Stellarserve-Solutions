@@ -1,55 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stellarserve Solutions | Hire Smarter. Grow Faster.</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="/images/android-chrome-512x512.png"
+      type="image/png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="CSS/style.css" />
+    <title>Stellarserve Solutions</title>
+  </head>
+  <body>
+    <main id="main-content" style="opacity: 1">
+      <header>
+        <a class="logo" href="#">
+          <img src="images/logo.png" alt="Stellarserve Solutions Logo" />
+        </a>
+        <nav>
+          <div class="sidebar">
+            <div onclick="hideSidebar()" id="menu-icon" class="bx bx-x menu-close"></div>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="juruAI.html">JuruAI</a></li>
+              <li><a href="#testimonial">Testimonials</a></li>
+            </ul>
+            <div class="btn find-talent get-started">
+              <a href="https://tally.so/r/wAO4ye">Find Talents</a>
+            </div>
+            <div class="btn get-started">
+              <a href="https://spiced-grip-67a.notion.site/Job-Board-4ef22b2ef38e47bc86197787f6f0e11c#4c30f7bb20a4406b87a15b59676400e0">Find Jobs</a>
+            </div>
+          </div>
+          <div class="top-nav">
+            <ul class="hideOnMobile">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="juruAI.html">Juru AI</a></li>
+              <li><a href="#testimonial">Testimonials</a></li>
+            </ul>
+            <div class="btn find-talent get-started hideOnMobile">
+              <a href="https://tally.so/r/wAO4ye" target="_blank">Find Talents</a>
+            </div>
+            <div class="btn get-started hideOnMobile">
+              <a href="https://spiced-grip-67a.notion.site/Job-Board-4ef22b2ef38e47bc86197787f6f0e11c#4c30f7bb20a4406b87a15b59676400e0" target="_blank">Find Jobs</a>
+            </div>
+            <div onclick="showSidebar()" id="menu-icon" class="bx bx-menu menu"></div>
+          </div>
+        </nav>
+      </header>
 
-  <!-- Your existing styles and links -->
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <h1>Welcome to Stellarserve Solutions</h1>
-    <p>Your growth partner in hiring excellence — connecting startups and SMEs with top remote and onsite talent.</p>
-  </header>
+      <!-- Home Section -->
+      <section id="home" class="home">
+        <div class="blob"></div>
+        <video autoplay muted loop id="homeVideo" class="home-video">
+          <source src="images/home.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+        <div class="home-content">
+          <h1>Connect, grow, innovate.</h1>
+          <p>Hire the Best Remote Talent Worldwide with Stellarserve Solutions.</p>
+          <div class="home-btn-container">
+            <div class="btn btn1"><a href="#services">View our services</a></div>
+            <div class="btn btn2"><a href="https://tally.so/r/wAO4ye" target="_blank">Find Talents</a></div>
+          </div>
+        </div>
+      </section>
 
-  <!-- Main Content -->
-  <main>
-    <section>
-      <h2>About Us</h2>
-      <p>We help businesses hire smarter and faster using AI-driven recruitment tools. Whether you’re a job seeker or a growing company, our platform connects you to opportunities that fit.</p>
-    </section>
+      <div class="horizontal-line"></div>
 
-    <section>
-      <h2>Book a Consultation</h2>
-      <p>Schedule a free consultation to discuss your hiring or career needs.</p>
-      <a href="https://calendly.com/stellarserve/consultation" target="_blank">Book on Calendly</a>
-    </section>
-  </main>
+      <!-- About Section -->
+      <section id="about" class="about">
+        <div class="about-content">
+          <div class="about-desc" data-aos="fade-right">
+            <h2>About Us</h2>
+            <p>
+              Stellarserve Solutions revolutionizes tech hiring for startups & SMEs.
+              We connect you with top-tier remote, onsite, hybrid, and non-tech talent in various fields.
+            </p>
+          </div>
+          <div class="about-image-container" data-aos="fade-left">
+            <img src="images/About5.jpg" alt="" />
+          </div>
+        </div>
+      </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Stellarserve Solutions | All Rights Reserved</p>
-  </footer>
+      <!-- Services Section -->
+      <section id="services" class="services">
+        <div class="services-heading">
+          <h2>Our Services</h2>
+          <p>Find the perfect professionals for your business.</p>
+        </div>
+        <div class="services-card-container">
+          <div class="services-card" data-aos="fade-up">
+            <div class="services-card-icon">
+              <img src="images/Chipping.png" alt="" />
+            </div>
+            <h3>AI-Powered Hiring Platform</h3>
+            <p>Efficient, effective, and cost-saving tech recruitment powered by AI.</p>
+          </div>
+          <div class="services-card" data-aos="fade-up">
+            <div class="services-card-icon">
+              <img src="images/Worldwide Location.png" alt="" />
+            </div>
+            <h3>Global Talent Reach</h3>
+            <p>Expand your team globally and locally, including onsite and hybrid options.</p>
+          </div>
+          <div class="services-card" data-aos="fade-up">
+            <div class="services-card-icon">
+              <img src="images/Circuit.png" alt="" />
+            </div>
+            <h3>Agile Hiring Solutions</h3>
+            <p>Scale your team and drive growth with agile hiring and access to a diverse talent pool.</p>
+          </div>
+          <div class="services-card" data-aos="fade-up">
+            <div class="services-card-icon">
+              <img src="images/Connected People.png" alt="" />
+            </div>
+            <h3>Custom Talent Solutions</h3>
+            <p>Tailored solutions to match your unique hiring needs and build an innovative remote or onsite team.</p>
+          </div>
+        </div>
+      </section>
 
-  <!-- ✅ Voiceflow Chatbot Integration -->
-  <script type="text/javascript">
-    (function(d, t) {
-        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-        v.onload = function() {
-          window.voiceflow.chat.load({
-            verify: { projectID: '68f8d9b47cb44836ed960007' },
-            url: 'https://general-runtime.voiceflow.com',
-            versionID: 'production',
-            voice: { url: "https://runtime-api.voiceflow.com" }
-          });
-        };
-        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
-        v.type = "text/javascript"; 
-        s.parentNode.insertBefore(v, s);
-    })(document, 'script');
-  </script>
-</body>
+      <!-- Featured Services -->
+      <div class="featured-services fts-1">
+        <div class="featured-services-img" data-aos="fade-right">
+          <img src="images/About3.jpg" alt="" />
+        </div>
+        <div class="featured-services-desc" data-aos="fade-left">
+          <h2>Top-tier Talent</h2>
+          <p>Connect with skilled professionals to elevate your business.</p>
+        </div>
+      </div>
+      <div class="featured-services fts-2" data-aos="fade-right">
+        <div class="featured-services-desc">
+          <h2>Efficient and Effective Hiring</h2>
+          <p>Save time and resources with our AI-powered platform that streamlines recruitment.</p>
+        </div>
+        <div class="featured-services-img" data-aos="fade-left">
+          <img src="images/About2.jpg" alt="" />
+        </div>
+      </div>
+
+      <!-- Testimonials -->
+      <section id="testimonial" class="testimonial">
+        <div class="testimonial-heading">
+          <h2>Testimonials</h2>
+          <p>See what our customers are saying about our services</p>
+        </div>
+        <div class="testimonial-card-container">
+          <div class="testimonial-card" data-aos="fade-up">
+            <div class="quote">
+              <img src="images/icons8-get-quote-50.png" alt="" />
+            </div>
+            <p>Efficient, effective, and cost-saving tech recruitment powered by AI.</p>
+            <div class="customer-profile">
+              <img src="images/customer02.jpg" alt="" />
+              <div class="customer-id">
+                <h4>Patrick L</h4>
+                <p>Director, Green Ventures</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card" data-aos="fade-up">
+            <div class="quote">
+              <img src="images/icons8-get-quote-50.png" alt="" />
+            </div>
+            <p>Thanks to Stellarserve Solutions, we scaled our team and achieved business goals without geographical limitations.</p>
+            <div class="customer-profile">
+              <img src="images/customer01.jpg" alt="" />
+              <div class="customer-id">
+                <h4>Steven M</h4>
+                <p>Founder, AC Global</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQs Section -->
+      <section id="faq" class="faq">
+        <div class="faq-heading">
+          <h2>Frequently Asked Questions (FAQs)</h2>
+        </div>
+        <div class="accordion">
+          <div class="accordion-item">
+            <input type="radio" name="accordion" id="faq1" class="accordion-input" />
+            <label for="faq1" class="accordion-label">What is Stellarserve Solutions?</label>
+            <div class="accordion-content">
+              <p>Stellarserve Solutions offers a comprehensive platform that revolutionizes the way companies source and hire talent.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <input type="radio" name="accordion" id="faq2" class="accordion-input" />
+            <label for="faq2" class="accordion-label">How does the platform work?</label>
+            <div class="accordion-content">
+              <p>Our platform provides access to a global network of vetted professionals in various domains.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <input type="radio" name="accordion" id="faq3" class="accordion-input" />
+            <label for="faq3" class="accordion-label">What services do you offer?</label>
+            <div class="accordion-content">
+              <p>We offer services for remote, onsite, hybrid, and non-tech roles across multiple industries.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <input type="radio" name="accordion" id="faq4" class="accordion-input" />
+            <label for="faq4" class="accordion-label">How can I get started?</label>
+            <div class="accordion-content">
+              <p>
+                Click on <a href="https://tally.so/r/wAO4ye" target="_blank">"Find Talent"</a> or <a href="https://spiced-grip-67a.notion.site/Job-Board-4ef22b2ef38e47bc86197787f6f0e11c#4c30f7bb20a4406b87a15b59676400e0" target="_blank">"Find Jobs"</a> to specify your needs.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <input type="radio" name="accordion" id="faq5" class="accordion-input" />
+            <label for="faq5" class="accordion-label">What makes Stellarserve Solutions unique?</label>
+            <div class="accordion-content">
+              <p>Our platform streamlines hiring, reducing time-to-hire while ensuring quality matches for remote, onsite, hybrid, or non-tech roles.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <h2>Connect with us</h2>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/company/stellarserve-solutions/" target="_blank"><i class="bx bxl-linkedin"></i></a>
+          <a href="mailto:iuwadukunze@gmail.com" target="_blank"><i class="bx bxs-envelope"></i></a>
+        </div>
+        <div class="partnership">
+          <p>In partnership with:</p>
+          <div class="partner-profile">
+            <div class="partner-logo"><img src="images/the-future-list.png" alt="" /></div>
+            <div class="partner-logo"><img src="images/teddy-tech-solutions.png" alt="" /></div>
+            <div class="partner-logo"><img src="images/alx-ventures.png" alt="" /></div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; <script>document.write(new Date().getFullYear());</script> All rights reserved.</p>
+          <div class="vertical-line"></div>
+          <div class="footer-logo"><a href="#"><img src="images/logo.png" alt="" /></a></div>
+        </div>
+      </footer>
+
+      <script src="script.js"></script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    </main>
+
+    <!-- Voiceflow Juru Agent Widget -->
+    <script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '68f8d9b47cb44836ed960007' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production',
+          voice: {
+            url: "https://runtime-api.voiceflow.com"
+          }
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+  </body>
 </html>
